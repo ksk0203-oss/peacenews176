@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>평화세상 · 통권 176호</title>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="사단법인 참된평화를만드는사람들">
+<meta property="og:title" content="평화세상 · 통권 176호">
+<meta property="og:description" content="사단법인 참된평화를만드는사람들이 전하는 소식지 176호입니다. 이번 호 이야기를 확인해보세요.">
+<meta property="og:url" content="https://ksk0203-oss.github.io/peacenews176/">
+<meta property="og:image" content="https://ksk0203-oss.github.io/peacenews176/images/176/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="평화세상 · 통권 176호">
+<meta name="twitter:description" content="사단법인 참된평화를만드는사람들이 전하는 소식지 176호입니다.">
+<meta name="twitter:image" content="https://ksk0203-oss.github.io/peacenews176/images/176/cover.jpg">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+:root {
+  --forest-900: #0F2721;
+  --forest-700: #3A514D;
+  --forest-line: #425D54;
+  --sage: #A6B4B2;
+  --sage-light: #E3E8E7;
+  --terracotta: #A37F52;
+  --terracotta-light: #F3EAE0;
+  --white: #FFFFFF;
+  --off-white: #FAFAFA;
+  --footer-gray: #EAECEB;
+  --text-black: #101010;
+  --text-gray: #5B5B5B;
+  --border-light: #E3E3E0;
+}
+body.dark-mode {
+  --white: #1E2426;
+  --off-white: #14181A;
+  --footer-gray: #1B201F;
+  --text-black: #E8E8E6;
+  --text-gray: #A8AEAC;
+  --border-light: #333937;
+  --sage-light: #26302C;
+  --terracotta-light: #3A2E22;
+}
+body { transition: background 0.2s, color 0.2s; }
+body.dark-mode .closing-logo img { background:#fff; padding:8px; border-radius:8px; }
+body.dark-mode .qr-box img { background:#ffffff !important; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--off-white);
+  color: var(--text-black);
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.utility-bar {
+  max-width: 680px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 28px; background: var(--off-white);
+  font-size: 13px; color: var(--text-gray); letter-spacing: 0.2px;
+}
+.utility-link { color: var(--forest-700); text-decoration: none; border-bottom: 1px solid var(--forest-700); white-space: nowrap; }
+
+.email-wrap {
+  max-width: 680px; margin: 0 auto 48px; background: var(--white);
+  box-shadow: 0 4px 28px rgba(15,39,33,0.08);
+  overflow: hidden;
+}
+.email-wrap.font-sm { zoom: 0.92; }
+.email-wrap.font-lg { zoom: 1.15; }
+
+/* ── 히어로 ── */
+.hero {
+  position: relative;
+  background: linear-gradient(155deg, var(--forest-900) 0%, var(--forest-700) 100%);
+  padding: 56px 28px 48px;
+  text-align: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.06) 0, transparent 40%),
+    radial-gradient(circle at 88% 82%, rgba(255,255,255,0.05) 0, transparent 45%);
+  pointer-events: none;
+}
+.hero-brand {
+  position: relative;
+  font-family: 'Noto Sans KR'; font-size: 13px; font-weight: 700;
+  letter-spacing: 4px; color: rgba(255,255,255,0.55); text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.hero-icon { position: relative; margin-bottom: 18px; }
+.hero-icon svg { display: block; margin: 0 auto; }
+.hero-title {
+  position: relative;
+  margin-bottom: 16px;
+}
+.hero-title img {
+  display: block; margin: 0 auto;
+  width: 100%; max-width: 420px; height: auto;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+.hero-title img.hero-animate {
+  opacity: 0; transform: scale(0.55) translateY(24px);
+  animation: heroLogoIn 2.6s cubic-bezier(0.22, 1.4, 0.36, 1) 0.2s forwards;
+}
+.hero-title img:hover {
+  transform: scale(1.12);
+}
+@keyframes heroLogoIn {
+  0%   { opacity: 0; transform: scale(0.55) translateY(24px); }
+  65%  { opacity: 1; transform: scale(1.08) translateY(-4px); }
+  85%  { transform: scale(0.97) translateY(1px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.hero-badge {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 18px; border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  font-family: 'Noto Sans KR'; font-size: 14px; font-weight: 600;
+  letter-spacing: 1.5px; color: rgba(255,255,255,0.9);
+}
+.hero-badge .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--terracotta); }
+
+/* ── 인덱스(목차) ── */
+.index-box { padding: 34px 28px 8px; }
+.index-label {
+  font-family: 'Noto Sans KR'; font-size: 13px; font-weight: 700; letter-spacing: 2.5px;
+  color: var(--terracotta); text-transform: uppercase; margin-bottom: 14px;
+}
+.index-list { list-style: none; border-top: 1px solid var(--border-light); }
+.index-list li { border-bottom: 1px solid var(--border-light); }
+.index-list a {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 4px; text-decoration: none; color: var(--text-black);
+}
+.index-num {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--forest-900); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif KR'; font-size: 13px; font-weight: 700;
+}
+.index-num.alt { background: var(--sage); color: var(--forest-900); }
+.index-text { flex: 1; }
+.index-title {
+  display: inline-block; font-family: 'Noto Serif KR'; font-size: 16px; font-weight: 700; color: var(--forest-900);
+  transform-origin: left center;
+  transition: font-size 0.25s ease, color 0.25s ease;
+}
+.index-list a:hover .index-title { font-size: 18.5px; color: var(--terracotta); }
+.index-sub { font-size: 13px; color: var(--text-gray); margin-top: 2px; }
+.index-arrow { color: var(--terracotta); font-size: 15px; transition: transform 0.25s ease; }
+.index-list a:hover .index-arrow { transform: translateX(4px); }
+
+/* ── 오너먼트 디바이더 ── */
+.ornament-divider {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 30px 28px 0;
+}
+.ornament-divider .line { flex: 1; height: 1px; background: var(--border-light); max-width: 90px; }
+.ornament-divider .diamond { width: 6px; height: 6px; background: var(--terracotta); transform: rotate(45deg); }
+
+/* ── 기사 (01/02/03) ── */
+.article { padding: 40px 28px 4px; scroll-margin-top: 20px; }
+.article-head { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 22px; }
+.article-num {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--forest-900); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif KR'; font-size: 17px; font-weight: 700;
+}
+.article-heading { flex: 1; padding-top: 2px; }
+.section-label {
+  display: block; font-size: 13px; font-weight: 700; letter-spacing: 2.5px;
+  color: var(--terracotta); text-transform: uppercase; margin-bottom: 8px;
+}
+.article-title {
+  font-family: 'Noto Serif KR'; font-size: 26px; font-weight: 700; color: var(--forest-900);
+  line-height: 1.4; margin-bottom: 10px;
+  opacity: 0; transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  transform-origin: left center;
+}
+.article-title.in-view {
+  opacity: 1; transform: translateY(0);
+}
+.article-title.in-view:hover {
+  transform: scale(1.05);
+  transition: transform 0.35s ease;
+}
+.article-num {
+  opacity: 0; transform: scale(0.6);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.article-num.in-view {
+  opacity: 1; transform: scale(1);
+}
+.article-subtitle {
+  font-family: 'Noto Serif KR'; font-size: 16px; font-style: italic; font-weight: 500;
+  color: var(--forest-700); margin-bottom: 10px;
+}
+.article-byline {
+  font-size: 15px; color: var(--text-gray);
+  display: flex; align-items: center; gap: 8px;
+}
+.article-byline::before {
+  content: ''; width: 14px; height: 1px; background: var(--sage);
+  display: inline-block;
+}
+
+.body-copy { padding: 0 28px 8px; }
+.body-copy p.body-text, p.body-text {
+  font-size: 17.5px; line-height: 1.95; color: var(--text-black); text-align: left;
+  padding: 0 28px; margin-top: 20px;
+}
+.body-copy p.body-text:first-child { margin-top: 0; }
+
+.drop-cap {
+  float: left;
+  font-family: 'Noto Serif KR'; font-weight: 700;
+  font-size: 54px; line-height: 0.8;
+  color: var(--forest-900);
+  padding: 6px 8px 0 0;
+}
+
+.pullquote {
+  margin: 28px 28px; padding: 22px 26px;
+  background: var(--terracotta-light);
+  border-left: 3px solid var(--terracotta);
+}
+.pullquote p {
+  font-family: 'Noto Serif KR'; font-size: 20px; font-weight: 600; font-style: italic;
+  line-height: 1.7; color: var(--forest-900);
+}
+.pq-source {
+  display: block; margin-top: 10px;
+  font-family: 'Noto Sans KR'; font-size: 13.5px; font-style: normal; font-weight: 600;
+  color: var(--text-gray);
+}
+
+/* ── 기사 3 내부 대제목 (Ⅰ/Ⅱ/Ⅲ) ── */
+.section-major {
+  display: flex; align-items: center; gap: 16px;
+  padding: 34px 28px 20px;
+}
+.section-num {
+  flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--sage); color: var(--forest-900);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif KR'; font-size: 18px; font-weight: 700;
+}
+.section-title {
+  font-family: 'Noto Serif KR'; font-size: 20px; font-weight: 700; color: var(--forest-900);
+}
+.sub-heading {
+  font-family: 'Noto Sans KR'; font-size: 14.5px; font-weight: 700; letter-spacing: 0.5px;
+  color: var(--terracotta);
+  padding: 8px 28px 0; margin-top: 14px;
+}
+
+/* ── 연보 타임라인 ── */
+.timeline-section { padding: 40px 28px 8px; scroll-margin-top: 20px; }
+.timeline-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+.tl-badge {
+  flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--forest-900); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Serif KR'; font-size: 19px;
+}
+.timeline-title { font-family: 'Noto Serif KR'; font-size: 20px; font-weight: 700; color: var(--forest-900); }
+.tl-row { display: flex; gap: 20px; padding: 13px 0; border-bottom: 1px solid var(--border-light); }
+.tl-row:last-child { border-bottom: none; }
+.tl-year { flex-shrink: 0; width: 104px; font-family: 'Noto Serif KR'; font-size: 14.5px; font-weight: 700; color: var(--forest-700); }
+.tl-desc { font-size: 14px; line-height: 1.7; color: var(--text-black); }
+
+.article-placeholder, .note-box {
+  margin-top: 4px; padding: 18px 20px;
+  background: var(--sage-light); border-left: 3px solid var(--sage);
+  font-size: 14px; color: var(--text-gray); line-height: 1.8;
+}
+.note-box { margin: 30px 28px 8px; }
+
+/* ── 법인 소식 사진 ── */
+.news-date {
+  margin: 26px 0 12px; padding-left: 14px; border-left: 3px solid var(--terracotta);
+  font-family: 'Noto Serif KR'; font-size: 16.5px; font-weight: 600; color: var(--forest-900);
+  line-height: 1.5;
+  display: flex; align-items: baseline; gap: 10px;
+}
+.news-date:first-child { margin-top: 4px; }
+.news-roman {
+  flex-shrink: 0;
+  font-family: 'Noto Serif KR'; font-weight: 700; font-size: 15px;
+  color: var(--terracotta);
+}
+.photo-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  margin: 10px 0 4px;
+}
+.photo-grid.single { grid-template-columns: 1fr; }
+.photo-grid, .photo-single { overflow: hidden; }
+.photo-grid img, .photo-single img {
+  width: 100%; height: 100%; object-fit: cover;
+  aspect-ratio: 4 / 3; border-radius: 4px;
+  display: block;
+  opacity: 0; transform: translateY(18px) scale(1.02);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.photo-grid img.in-view, .photo-single img.in-view {
+  opacity: 1; transform: translateY(0) scale(1);
+}
+.photo-grid img:hover, .photo-single img:hover {
+  filter: brightness(1.06);
+}
+.photo-single { margin: 10px 0 4px; }
+.photo-single img { aspect-ratio: 16 / 10; }
+.photo-caption {
+  margin: 8px 0 18px; font-size: 12.5px; color: var(--text-gray);
+  text-align: center; line-height: 1.6;
+}
+
+/* ── 법인 광고 (기사 6 하단) ── */
+.corp-ad {
+  margin: 34px 0 4px; padding: 26px 24px; scroll-margin-top: 24px;
+  background: var(--sage-light); border-top: 3px solid var(--terracotta);
+}
+.corp-ad-label {
+  font-family: 'Noto Sans KR'; font-size: 12.5px; font-weight: 700; letter-spacing: 2px;
+  color: var(--terracotta); text-transform: uppercase; margin-bottom: 10px;
+}
+.corp-ad-title {
+  font-family: 'Noto Serif KR'; font-size: 20px; font-weight: 700; color: var(--forest-900);
+  line-height: 1.4; margin-bottom: 18px;
+}
+.corp-ad p.body-text { padding: 0; font-size: 15px; line-height: 1.85; margin-top: 16px; }
+.corp-ad p.body-text:first-of-type { margin-top: 0; }
+.corp-ad .ad-quote {
+  font-family: 'Noto Serif KR'; font-weight: 600; color: var(--forest-900);
+}
+.corp-ad-signature {
+  margin-top: 22px; text-align: right; font-size: 13.5px; color: var(--text-gray);
+}
+
+/* ── 후원 감사 (기사 7) ── */
+.sublist-head {
+  font-family: 'Noto Serif KR'; font-weight: 700; font-size: 15.5px; color: var(--forest-900);
+  margin: 26px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border-light);
+}
+.sublist-head:first-child { margin-top: 4px; }
+.sublist-body { font-size: 13.5px; line-height: 1.9; color: var(--text-black); }
+.role-row { display: flex; gap: 12px; font-size: 13.5px; line-height: 1.85; }
+.role-title { flex-shrink: 0; width: 78px; color: var(--text-gray); }
+.acct-row {
+  display: flex; justify-content: center; align-items: baseline; gap: 18px; font-size: 13.5px;
+  padding: 6px 0; border-bottom: 1px dashed var(--border-light);
+}
+.acct-row span:first-child { width: 80px; text-align: right; color: var(--text-gray); }
+.acct-row span:last-child { width: 150px; text-align: left; font-weight: 600; color: var(--forest-900); }
+.acct-owner { margin-top: 10px; font-size: 13px; color: var(--text-gray); text-align: center; }
+
+.qr-box { margin: 24px 0 8px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.qr-label {
+  font-family: 'Noto Sans KR'; font-size: 13px; font-weight: 700; letter-spacing: 1px;
+  color: var(--forest-900); margin-bottom: 12px;
+}
+.qr-box img {
+  width: 140px; height: 140px; padding: 10px; background: var(--white);
+  border: 1px solid var(--border-light); border-radius: 6px;
+}
+.qr-donate-link {
+  display: inline-block; margin-top: 10px;
+  font-family: 'Noto Sans KR'; font-size: 13px; font-weight: 700;
+  color: var(--forest-700); text-decoration: underline;
+}
+
+.closing-block { margin: 40px 0 8px; padding: 30px 20px 6px; text-align: center; border-top: 1px solid var(--border-light); }
+.closing-verse {
+  font-family: 'Noto Serif KR'; font-size: 17px; font-weight: 600; font-style: italic;
+  line-height: 1.7; color: var(--forest-900); margin-bottom: 4px;
+}
+.closing-verse .pq-source { justify-content: center; }
+.closing-logo { margin-top: 22px; }
+.closing-logo img { max-width: 260px; width: 100%; height: auto; }
+
+/* ── 푸터 ── */
+.footer-box { background: var(--footer-gray); padding: 36px 28px; margin-top: 32px; }
+.footer-mark { font-family: 'Noto Serif KR'; font-weight: 700; font-size: 17px; color: var(--forest-900); margin-bottom: 12px; }
+.footer-box p { font-size: 13.5px; line-height: 1.9; color: var(--text-gray); margin-bottom: 6px; }
+.footer-box a { color: var(--forest-700); text-decoration: underline; }
+
+.bottom-bar {
+  background: var(--forest-900); padding: 20px 28px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.bottom-nav a { color: var(--white); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-decoration: none; margin: 0 4px; opacity: 0.9; }
+.bottom-nav span { color: rgba(255,255,255,0.3); }
+.social-circle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(255,255,255,0.12); color: var(--white);
+  font-size: 13px; text-decoration: none; margin-left: 8px;
+}
+
+/* ── 우측 고정 인덱스 탭 ── */
+.index-tabs {
+  position: fixed;
+  top: 50%;
+  left: calc(50% + 340px);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 40;
+}
+.index-tab {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: var(--white);
+  font-family: 'Noto Serif KR';
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  padding: 16px 9px;
+  min-height: 96px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 3px 8px rgba(15,39,33,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.index-tab:hover { transform: translateX(4px); box-shadow: 3px 4px 10px rgba(15,39,33,0.26); }
+.index-tab .roman {
+  font-family: 'Noto Sans KR';
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.8;
+  letter-spacing: 0;
+  display: block;
+  margin-bottom: 8px;
+}
+.index-tab--01 { background: var(--terracotta); }
+.index-tab--02 { background: var(--forest-700); }
+.index-tab--03 { background: var(--forest-900); }
+.index-tab--04 { background: #6E7F6A; }
+.index-tab--05 { background: #6B5B7E; }
+.index-tab--06 { background: #8A6D4A; }
+.index-tab--07 { background: var(--forest-700); }
+@media (min-width: 1041px) {
+  .index-tabs.font-lg { left: calc(50% + 391px); }
+  .index-tabs.font-sm { left: calc(50% + 313px); }
+}
+
+@media (max-width: 1040px) {
+  .index-tabs {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    background: var(--white);
+    box-shadow: 0 -2px 10px rgba(15,39,33,0.15);
+    padding: 6px 10px;
+  }
+  .index-tab {
+    writing-mode: horizontal-tb;
+    flex: 0 0 auto;
+    min-width: 64px;
+    min-height: 0;
+    padding: 10px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+    white-space: nowrap;
+  }
+  .index-tab:hover { transform: none; }
+  .index-tab .roman { display: inline; margin-bottom: 0; margin-right: 4px; font-size: 10px; }
+  body { padding-bottom: 60px; }
+  .float-controls { bottom: 70px; }
+}
+
+@media (max-width: 640px) {
+  .utility-bar, .footer-box, .bottom-bar { padding-left: 16px; padding-right: 16px; }
+  .hero { padding: 44px 16px 36px; }
+  .article, .body-copy, .index-box, .timeline-section { padding-left: 16px; padding-right: 16px; }
+  .section-major, .sub-heading { padding-left: 16px; padding-right: 16px; }
+  p.body-text { padding-left: 16px; padding-right: 16px; }
+  .pullquote, .note-box { margin-left: 16px; margin-right: 16px; }
+  .ornament-divider { padding-left: 16px; padding-right: 16px; }
+  .hero-title img { max-width: 300px; }
+  .article-title { font-size: 22px; }
+  .section-title { font-size: 18px; }
+  .drop-cap { font-size: 44px; }
+  .tl-row { flex-direction: column; gap: 4px; }
+  .tl-year { width: auto; }
+}
+
+.stanza-line { margin-top: 6px !important; }
+.stanza-gap { height: 26px; }
+
+/* ── 음성 듣기 버튼 ── */
+.tts-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px; padding: 7px 16px;
+  background: var(--sage-light); border: 1px solid var(--sage);
+  border-radius: 999px; cursor: pointer;
+  font-family: 'Noto Sans KR'; font-size: 13px; font-weight: 600; color: var(--forest-900);
+  transition: background 0.15s;
+}
+.tts-btn:hover { background: var(--sage); }
+.tts-btn.playing { background: var(--terracotta); border-color: var(--terracotta); color: var(--white); }
+.tts-btn .tts-icon { font-size: 14px; }
+
+/* ── 플로팅 컨트롤 ── */
+/* ── 읽기 진행률 바 ── */
+.read-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: var(--terracotta); z-index: 900; transition: width 0.05s linear;
+}
+
+/* ── 사진 확대 라이트박스 ── */
+.photo-grid img, .photo-single img { cursor: zoom-in; }
+.lightbox-overlay {
+  position: fixed; inset: 0; z-index: 950;
+  background: rgba(15,39,33,0.9);
+  display: none; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.lightbox-overlay.show { display: flex; }
+.lightbox-overlay img {
+  max-width: 100%; max-height: 100%; border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+.lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--white); color: var(--forest-900);
+  border: none; font-size: 20px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+
+.float-controls {
+  position: fixed; right: 16px; bottom: 16px; z-index: 500;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.float-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--forest-900); color: var(--white);
+  border: none; box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Noto Sans KR'; font-size: 15px; font-weight: 700;
+  cursor: pointer;
+}
+.font-controls {
+  display: flex; flex-direction: column; background: var(--forest-900);
+  border-radius: 22px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+.font-controls .float-btn { box-shadow: none; border-radius: 0; }
+.font-controls .float-btn + .float-btn { border-top: 1px solid rgba(255,255,255,0.2); }
+.top-btn {
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+.top-btn.show { opacity: 1; visibility: visible; transform: translateY(0); }
+body.dark-mode .float-btn { background: var(--terracotta); }
+body.dark-mode .font-controls { background: var(--terracotta); }
+.tts-rate {
+  margin-top: 14px; margin-left: 6px;
+  padding: 7px 10px; border-radius: 999px;
+  border: 1px solid var(--sage); background: var(--white);
+  font-family: 'Noto Sans KR'; font-size: 12.5px; font-weight: 600; color: var(--forest-900);
+  cursor: pointer;
+}
+.opinion-form {
+  display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px;
+}
+.opinion-input, .opinion-textarea {
+  font-family: 'Noto Sans KR', sans-serif; font-size: 15px; color: var(--text-black);
+  background: var(--white); border: 1px solid var(--border-light); border-radius: 8px;
+  padding: 12px 14px; outline: none;
+}
+.opinion-input:focus, .opinion-textarea:focus { border-color: var(--forest-line); }
+.opinion-textarea { resize: vertical; line-height: 1.6; }
+.opinion-submit {
+  font-family: 'Noto Sans KR', sans-serif; font-size: 14.5px; font-weight: 700;
+  color: var(--white); background: var(--forest-900); border: none; border-radius: 8px;
+  padding: 13px; cursor: pointer; letter-spacing: 0.3px;
+}
+.opinion-submit:hover { background: var(--forest-700); }
+.opinion-status { font-size: 13px; color: var(--terracotta); min-height: 16px; }
+.opinion-list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+.opinion-item {
+  background: var(--sage-light); border-radius: 8px; padding: 16px 18px;
+}
+.opinion-item-content {
+  font-size: 15px; line-height: 1.75; color: var(--text-black); white-space: pre-wrap;
+}
+.opinion-item-meta {
+  font-size: 12.5px; color: var(--text-gray); margin-top: 8px;
+}
+.opinion-empty { font-size: 14px; color: var(--text-gray); text-align: center; padding: 12px 0; }
+/* ── 인쇄(Ctrl+P) 시 버튼/팝업류는 숨기고 본문만 깔끔하게 출력 ── */
+@media print {
+  body.dark-mode { background: #fff !important; color: #101010 !important; }
+  .float-controls,
+  .read-progress,
+  .lightbox-overlay,
+  .index-tabs,
+  .tts-btn,
+  .tts-rate,
+  .index-box .index-arrow { display: none !important; }
+  body { padding-bottom: 0 !important; }
+  .email-wrap { box-shadow: none !important; max-width: 100% !important; }
+  a[href]::after { content: ""; }
+  .photo-grid img, .photo-single img { opacity: 1 !important; transform: none !important; }
+  .article-title, .article-num { opacity: 1 !important; transform: none !important; }
+  .hero-title img { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .article, .body-copy, p.body-text { page-break-inside: avoid; }
+}
+</style>
+<style>
+/* ── 176호 추가 스타일 (기존 175호 틀의 색·글꼴 변수를 그대로 사용) ── */
+.cover-photo { position: relative; max-width: 560px; margin: 30px auto 0; }
+.cover-photo img { display: block; width: 100%; height: auto; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+.cover-photo span { display: block; margin-top: 10px; font-size: 12px; color: rgba(255,255,255,0.72); text-align: center; letter-spacing: 0.3px; }
+
+.figs { display: grid; grid-template-columns: repeat(4, 1fr); margin: 6px 28px 6px; border: 1px solid var(--border-light); background: var(--sage-light); }
+.figs div { padding: 22px 8px; text-align: center; border-right: 1px solid var(--border-light); }
+.figs div:last-child { border-right: none; }
+.figs strong { display: block; font-family: 'Noto Serif KR'; font-size: 26px; font-weight: 700; color: var(--forest-900); line-height: 1.2; }
+body.dark-mode .figs strong { color: var(--terracotta); }
+.figs strong em { font-style: normal; font-size: 13px; font-weight: 500; margin-left: 2px; }
+.figs span { display: block; margin-top: 6px; font-size: 12px; color: var(--text-gray); line-height: 1.5; }
+
+.m-sub { display: inline-block; margin-top: 4px; font-family: 'Noto Sans KR'; font-size: 12.5px; font-weight: 400; color: var(--text-gray); letter-spacing: 0.3px; }
+.entry { padding: 18px 28px 6px; }
+.entry .kicker { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; color: var(--terracotta); background: var(--terracotta-light); padding: 3px 10px; border-radius: 2px; }
+.entry h4 { font-family: 'Noto Serif KR'; font-size: 18px; font-weight: 700; line-height: 1.5; color: var(--forest-900); margin-top: 10px; word-break: keep-all; }
+body.dark-mode .entry h4 { color: var(--text-black); }
+.entry .when { margin-top: 4px; font-size: 13px; color: var(--text-gray); }
+.entry p { font-size: 15.5px; line-height: 1.9; color: var(--text-black); margin-top: 12px; word-break: keep-all; }
+.entry .photo-caption { margin: 8px 0 14px; padding: 0; }
+.entry .photo-grid, .entry .photo-single { margin: 14px 0 4px; }
+dl.facts { margin-top: 14px; border-top: 1px solid var(--border-light); }
+dl.facts div { display: grid; grid-template-columns: 92px 1fr; gap: 14px; padding: 9px 0; border-bottom: 1px solid var(--border-light); font-size: 14px; line-height: 1.7; }
+dl.facts dt { font-weight: 700; color: var(--forest-700); }
+body.dark-mode dl.facts dt { color: var(--sage); }
+dl.facts dd { color: var(--text-black); word-break: keep-all; }
+ul.notes { list-style: none; margin-top: 12px; }
+ul.notes li { position: relative; padding: 8px 0 8px 16px; font-size: 14.5px; line-height: 1.8; color: var(--text-black); word-break: keep-all; }
+ul.notes li::before { content: ''; position: absolute; left: 0; top: 18px; width: 5px; height: 5px; background: var(--terracotta); transform: rotate(45deg); }
+ul.notes li b { color: var(--forest-900); margin-right: 6px; }
+body.dark-mode ul.notes li b { color: var(--terracotta); }
+.entry .footnote { font-size: 12.5px; color: var(--text-gray); }
+
+/* 법인 소식 · 행사 안내(넓게) */
+.event { background: var(--forest-900); color: #EDE9DF; position: relative; overflow: hidden; margin: 8px 0 0; }
+.event::before { content: ''; position: absolute; left: 50%; top: 42%; width: 520px; height: 520px; transform: translate(-50%, -50%); border: 1px solid rgba(237,233,223,.12); border-radius: 50%; box-shadow: 0 0 0 52px rgba(237,233,223,.035), 0 0 0 104px rgba(237,233,223,.02); }
+.event-top { position: relative; display: flex; justify-content: space-between; padding: 22px 36px; border-bottom: 1px solid rgba(237,233,223,.2); font-size: 12px; font-weight: 700; letter-spacing: 4px; color: #C9A878; }
+.event-body { position: relative; padding: 76px 36px 70px; text-align: center; }
+.event-kicker { font-family: 'Noto Serif KR'; font-size: 18px; line-height: 1.9; color: #D8D3C4; letter-spacing: 1px; }
+.event-title { margin: 34px 0 30px; font-family: 'Noto Serif KR'; font-size: 54px; font-weight: 700; line-height: 1.3; color: #fff; letter-spacing: -1px; word-break: keep-all; }
+.event-title small { font-size: 38px; font-weight: 300; color: #C9A878; margin: 0 6px; }
+.event-with { font-family: 'Noto Serif KR'; font-size: 20px; color: #D8D3C4; }
+.event-talk { margin-top: 8px; font-family: 'Noto Serif KR'; font-size: 40px; font-weight: 700; color: #C9A878; letter-spacing: 8px; padding-left: 8px; }
+.event-info { position: relative; border-top: 1px solid rgba(237,233,223,.2); display: grid; grid-template-columns: 1fr 1fr; }
+.event-info div { padding: 28px 36px 32px; }
+.event-info div + div { border-left: 1px solid rgba(237,233,223,.2); }
+.event-info dt { font-size: 12px; font-weight: 700; letter-spacing: 4px; color: #C9A878; margin-bottom: 10px; }
+.event-info dd strong { display: block; font-family: 'Noto Serif KR'; font-size: 22px; font-weight: 700; color: #fff; line-height: 1.5; }
+.event-info dd span { display: block; margin-top: 4px; font-size: 14px; color: #B9B7A9; line-height: 1.7; }
+
+/* 남은 일정 */
+.next { padding: 0 28px; }
+.next ol { list-style: none; counter-reset: n; border-top: 1px solid var(--forest-900); }
+.next li { counter-increment: n; display: grid; grid-template-columns: 44px 1fr; gap: 6px; padding: 18px 0; border-bottom: 1px solid var(--border-light); }
+.next li::before { content: counter(n, decimal-leading-zero); font-family: 'Noto Serif KR'; font-size: 20px; font-weight: 300; color: var(--terracotta); line-height: 1.5; }
+.next li strong { display: block; font-family: 'Noto Serif KR'; font-size: 17px; font-weight: 700; color: var(--forest-900); margin-bottom: 2px; }
+body.dark-mode .next li strong { color: var(--text-black); }
+.next li span { font-size: 14.5px; line-height: 1.85; color: var(--text-black); word-break: keep-all; }
+.ask { margin: 26px 28px 0; padding: 24px 26px; background: var(--forest-700); color: #EDF0EA; border-radius: 2px; }
+.ask b { font-family: 'Noto Serif KR'; font-size: 17px; display: block; margin-bottom: 8px; color: #fff; }
+.ask p { font-size: 14.5px; line-height: 1.9; color: #D5DDD7; }
+
+/* QR 옆 후원 링크 */
+.qr-box { display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 28px; flex-wrap: wrap; }
+.qr-item { display: flex; flex-direction: column; align-items: center; }
+.donate-link { display: flex; align-items: center; justify-content: center; text-align: center; width: 140px; height: 140px; padding: 10px; border: 1px solid var(--forest-900); border-radius: 6px; font-family: 'Noto Serif KR'; font-size: 15px; font-weight: 700; line-height: 1.7; color: var(--forest-900); text-decoration: none; background: var(--off-white); }
+.donate-link:hover { background: var(--forest-900); color: #fff; }
+body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage); }
+
+@media (max-width: 640px) {
+  .figs { grid-template-columns: repeat(2, 1fr); margin-left: 16px; margin-right: 16px; }
+  .figs div:nth-child(2) { border-right: none; }
+  .figs div:nth-child(-n+2) { border-bottom: 1px solid var(--border-light); }
+  .entry, .next { padding-left: 16px; padding-right: 16px; }
+  .ask { margin-left: 16px; margin-right: 16px; }
+  dl.facts div { grid-template-columns: 1fr; gap: 0; }
+  .event-top { padding: 18px 22px; }
+  .event-body { padding: 56px 22px 50px; }
+  .event-title { font-size: 38px; }
+  .event-title small { font-size: 26px; }
+  .event-talk { font-size: 32px; }
+  .event-info { grid-template-columns: 1fr; }
+  .event-info div { padding: 22px; }
+  .event-info div + div { border-left: none; border-top: 1px solid rgba(237,233,223,.2); }
+}
+</style>
+
+</head>
+<body>
+
+<div class="index-tabs">
+  <a class="index-tab index-tab--01" href="#article-01"><span><span class="roman">Ⅰ</span>잊혀진 기억</span></a>
+  <a class="index-tab index-tab--02" href="#article-02"><span><span class="roman">Ⅱ</span>감사 편지</span></a>
+  <a class="index-tab index-tab--03" href="#article-03"><span><span class="roman">Ⅲ</span>사역 보고</span></a>
+  <a class="index-tab index-tab--04" href="#article-04"><span><span class="roman">Ⅳ</span>법인 소식</span></a>
+  <a class="index-tab index-tab--05" href="#article-05"><span><span class="roman">Ⅴ</span>남은 일정</span></a>
+  <a class="index-tab index-tab--06" href="#article-06"><span><span class="roman">Ⅵ</span>후원 감사</span></a>
+</div>
+
+<div class="email-wrap">
+
+  <div class="hero">
+    <div class="hero-brand">PEACE WORLD NEWSLETTER</div>
+    <div class="hero-title"><img class="hero-animate" src="images/176/hero-logo.png" alt="평화세상"></div>
+    <div class="hero-badge"><span class="dot"></span>통권 176호</div>
+    <div class="cover-photo"><img src="images/176/cover.jpg" alt="제4회 카자흐스탄 평화기행 단체 사진, 알마티 근교"><span>제4회 카자흐스탄 평화기행 · 알마티 근교</span></div>
+  </div>
+
+  <div class="index-box">
+    <div class="index-label">이번 호 목차</div>
+    <ul class="index-list">
+      <li><a href="#article-01"><span class="index-num">01</span><span class="index-text"><span class="index-title">잊혀진 기억을 찾아, 다시 평화의 길 위에 서다</span><span class="index-sub">《평화세상》을 열며 · 김주용 법인 사무총장</span></span><span class="index-arrow">→</span></a></li>
+      <li><a href="#article-02"><span class="index-num">02</span><span class="index-text"><span class="index-title">평화를 만드는 길에 함께해 주셔서 감사합니다</span><span class="index-sub">이사장의 감사 편지 · 이은태 법인 이사장</span></span><span class="index-arrow">→</span></a></li>
+      <li><a href="#article-03"><span class="index-num">03</span><span class="index-text"><span class="index-title">2026 사역 보고서</span><span class="index-sub">1월부터 10월까지, 월별로 돌아보는 법인의 걸음</span></span><span class="index-arrow">→</span></a></li>
+      <li><a href="#article-04"><span class="index-num">04</span><span class="index-text"><span class="index-title">평화교실 with 훈훈책방</span><span class="index-sub">법인 소식 · 「뭉우리돌의 광야」 김동우 작가 북토크 11/28(토)</span></span><span class="index-arrow">→</span></a></li>
+      <li><a href="#article-05"><span class="index-num">05</span><span class="index-text"><span class="index-title">남은 일정과 후원 요청</span><span class="index-sub">대림절 묵상집 · 평화통일 포럼 · 고려인 후원</span></span><span class="index-arrow">→</span></a></li>
+      <li><a href="#article-06"><span class="index-num">06</span><span class="index-text"><span class="index-title">후원해 주셔서 감사합니다</span><span class="index-sub">후원자 명단 및 안내</span></span><span class="index-arrow">→</span></a></li>
+    </ul>
+  </div>
+
+
+  <div class="ornament-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+
+
+  <div class="article" id="article-01">
+    <div class="article-head">
+      <div class="article-num">01</div>
+      <div class="article-heading">
+        <span class="section-label">《평화세상》을 열며</span>
+        <div class="article-title">잊혀진 기억을 찾아,<br>다시 평화의 길 위에 서다</div>
+        <div class="article-subtitle">평화세상 2026년 9·10월호 여는 글</div>
+        <div class="article-byline">김주용 사무총장</div>
+<button class="tts-btn" data-article="article-01" onclick="toggleTTS('article-01', this)"><span class="tts-icon">🔊</span><span class="tts-label">이 글 듣기</span></button>
+      <select class="tts-rate" onchange="onRateChange(this)">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+      </div>
+    </div>
+  </div>
+  <div class="body-copy">
+      <p class="body-text"><span class="drop-cap">지</span>난 9월 27일부터 10월 3일까지 제4회 카자흐스탄 평화기행을 다녀왔습니다. 알마티에서 시작하여 우슈토베를 방문하고, 고려문화원에서는 그곳에 살아가는 고려인들의 이야기를 들었습니다. 낯선 땅을 찾아가는 여정이었지만, 그곳에서 들은 이야기들은 결코 낯설지 않았습니다. 오래전 고향을 떠나야 했던 이들의 삶이었고, 돌아오지 못한 사람들의 이야기였으며, 오늘을 살아가는 후손들의 이야기였습니다.</p>
+      <p class="body-text">1937년, 수많은 고려인이 삶의 터전을 빼앗긴 채 중앙아시아로 강제 이주되었습니다. 낯선 땅에서 겨울을 견디고, 황무지를 일구며 다시 삶을 시작해야 했습니다. 그로부터 긴 세월이 흘렀습니다. 이제 그 역사를 몸으로 기억하는 어르신들은 점점 줄어들고 있습니다. 그분들이 세상을 떠나시면 우리가 미처 듣지 못한 이야기들도 함께 사라질지 모릅니다.</p>
+      <p class="body-text">이번 기행에서 제 마음에 오래 남은 것은 바로 그 사실이었습니다. 우리가 찾아가야 할 곳은 단지 먼 나라의 유적지가 아니라, 아직 기억이 살아 있는 사람들의 곁이라는 사실입니다.</p>
+      <div class="pullquote"><p>&ldquo;우리가 찾아가야 할 곳은 먼 나라의 유적지가 아니라, 아직 기억이 살아 있는 사람들의 곁입니다.&rdquo;</p></div>
+      <p class="body-text">우리 법인은 카자흐스탄 박박티 마을에 고려인 기억박물관과 공동체센터를 세우는 일을 준비하고 있습니다. 거창한 건물을 세우는 것이 먼저는 아닙니다. 그곳에서 살아온 사람들의 이야기를 듣고 기록하며, 다음 세대가 자신의 뿌리를 잊지 않도록 돕는 일이 우선입니다. 독립운동가 후손들에게 장학금을 전하고, 추운 겨울을 견딜 수 있도록 난방을 지원하며, 사람과 사람이 서로 의지할 수 있는 자리를 만드는 일도 그 길에 놓여 있습니다.</p>
+      <p class="body-text">이번 방문에서는 고려인 후손과 현지 사역자들을 만나고, 고려문화원과 교류하며 카자흐스탄에서 함께 사역할 협력의 기반도 마련했습니다. 특히 현지 협력교회인 알마티 시온교회에서 ‘카자흐스탄 참된평화를만드는사람들’ 현판식을 가졌습니다. 작은 현판 하나를 세우는 일이었지만, 제게는 그 의미가 남달랐습니다. 한국에서 시작한 평화의 마음이 이제 중앙아시아의 한 지역에 작은 뿌리를 내리기 시작했다는 생각 때문입니다.</p>
+      <p class="body-text">이제 그 현판 아래에 사람들을 맞이하고 함께 일할 공간을 조금씩 갖추어 가야 합니다. 카자흐스탄 지부에는 사역에 필요한 책상과 의자, 컴퓨터 등 기본적인 집기와 사무기기가 필요합니다. 어쩌면 아주 소박한 물품들일지 모릅니다. 그러나 그 책상에서 고려인의 이야기가 기록되고, 그 컴퓨터로 다음 세대의 배움이 이어지며, 그 의자에 서로 다른 삶을 살아온 사람들이 마주 앉아 이야기를 나눌 수 있다면, 그것은 단순한 사무용품 이상의 의미를 갖게 될 것입니다.</p>
+      <p class="body-text">이 작은 공간을 채워 가는 일에 후원자 여러분의 도움의 손길을 기다립니다. 필요한 물품을 마련할 수 있도록 마음을 보태 주셔도 좋고, 이 사역을 주변에 알려 주셔도 좋겠습니다. 누군가의 작은 나눔이 먼 카자흐스탄에서 새로운 만남과 배움의 자리를 여는 귀한 씨앗이 될 것입니다.</p>
+      <p class="body-text">물론 앞으로 해야 할 일은 많습니다. 기억박물관을 준비하고, 사라져 가는 삶의 기록을 모으고, 청소년들에게 배움의 기회를 제공하며, 현지의 교회와 공동체가 스스로 미래를 만들어 갈 수 있도록 협력해야 합니다. 어느 하나 쉬운 일이 아닙니다. 그러나 저는 이번 기행을 통해 우리가 왜 이 일을 계속해야 하는지 조금 더 분명하게 알게 되었습니다.</p>
+      <p class="body-text">평화는 전쟁이 없는 상태만을 뜻하지 않습니다. 잊힌 사람을 기억하고, 상처 입은 사람의 이야기를 들으며, 끊어진 관계를 다시 잇는 일도 평화입니다. 그런 의미에서 고려인의 역사를 기억하는 일은 단지 과거를 보존하는 사업이 아닙니다. 국가폭력과 강제이주가 남긴 상처를 돌아보고, 그 아픔을 다음 세대의 연대와 희망으로 바꾸어 가는 평화의 실천입니다.</p>
+      <p class="body-text">한편 우리 법인의 형편도 녹록지 않습니다. 후원은 예전 같지 않고, 평화통일과 북한 선교에 대한 사회적 관심도 많이 달라졌습니다. 사역의 지속을 위해 새로운 길을 찾아야 할 때입니다. 그러나 어려운 형편이 우리가 걸어온 길을 멈추게 할 이유가 될 수는 없습니다. 오히려 무엇을 지키고 무엇을 새롭게 시작해야 하는지 더욱 진지하게 묻게 합니다.</p>
+      <p class="body-text">매주 화요일에는 성서를 함께 연구하는 ‘말씀의 잔치’가 이어지고 있습니다. 목요일에는 평화학을 공부하는 ‘평화나무’ 모임이, 매월 마지막 주 금요일에는 회복적 정의를 배우고 실천하는 모임이 열립니다. 성서를 바르게 읽는 일에서 시작하여 평화를 연구하고, 그 연구가 사람들의 삶 속에서 실천으로 이어지기를 바랍니다. 카자흐스탄에서의 만남 역시 이러한 배움과 실천이 국경을 넘어 확장되는 과정이라고 생각합니다.</p>
+      <p class="body-text">사랑하는 후원자 여러분, 우리가 이루려는 평화는 한 사람의 열심이나 한 번의 방문으로 완성되지 않습니다. 누군가의 이야기에 귀를 기울이는 사람, 그 이야기를 기록하는 사람, 작은 후원을 이어 가는 사람, 먼 곳의 이웃을 위해 기도하는 사람이 함께할 때 조금씩 자라납니다.</p>
+      <p class="body-text">카자흐스탄에서 돌아왔지만, 제 마음은 여전히 그곳의 사람들과 함께 있습니다. 다시 찾아가야 할 마을이 있고, 더 들어야 할 이야기가 있으며, 함께 이루어야 할 약속이 남아 있기 때문입니다.</p>
+      <p class="body-text">우리의 작은 걸음이 누군가에게는 잊히지 않을 권리가 되고, 또 다른 누군가에게는 내일을 살아갈 희망이 되기를 바랍니다.</p>
+      <p class="body-text">그 길에 여러분도 함께해 주십시오.</p>
+      <div class="pullquote"><p>평화를 만드는 일은 아직 끝나지 않았습니다.<br>어쩌면 우리는 이제 새로운 길의 첫걸음을 내딛고 있는지도 모릅니다.</p></div>
+      <p class="body-text" style="text-align:right;color:var(--text-gray);margin-top:34px">2026년 10월 21일<br>사단법인 참된평화를만드는사람들<br><strong style="color:var(--forest-900);font-size:18px">사무총장 김주용 목사</strong></p>
+  </div>
+
+
+  <div class="ornament-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+
+
+  <div class="article" id="article-02">
+    <div class="article-head">
+      <div class="article-num">02</div>
+      <div class="article-heading">
+        <span class="section-label">이사장의 편지</span>
+        <div class="article-title">평화를 만드는 길에<br>함께해 주셔서 감사합니다</div>
+        <div class="article-subtitle">이은태 이사장의 감사 편지</div>
+        <div class="article-byline">이은태 이사장</div>
+<button class="tts-btn" data-article="article-02" onclick="toggleTTS('article-02', this)"><span class="tts-icon">🔊</span><span class="tts-label">이 글 듣기</span></button>
+      <select class="tts-rate" onchange="onRateChange(this)">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+      </div>
+    </div>
+  </div>
+  <div class="body-copy">
+      <p class="body-text"><strong>사랑하는 후원자 여러분께.</strong></p>
+      <p class="body-text">주님의 평화가 후원자 여러분과 섬기시는 교회, 그리고 가정 위에 늘 함께하시기를 기원합니다.</p>
+      <p class="body-text">어느덧 2026년도 저물어 가고 있습니다. 한 해를 돌아보니 무엇보다 먼저 생각나는 분들이 있습니다. 바로 우리 사단법인 참된평화를만드는사람들을 위해 기도해 주시고, 귀한 정성으로 후원해 주신 여러분입니다. 여러모로 어려운 때인데도 변함없이 함께해 주셨지요. 그 고마운 마음을 어떻게 다 전할 수 있을까요. 이 자리를 빌려 진심으로 감사의 인사를 드립니다.</p>
+      <p class="body-text">우리 법인은 예수 그리스도께서 가르쳐 주신 평화의 복음을 따라 이 땅과 세계 곳곳에서 참된 평화를 이루기 위해 노력해 왔습니다. 돌아보면 참 많은 길을 걸어왔지요. 때로는 우리가 하는 일이 너무 작아 보이기도 하고, 평화를 향한 길이 멀고 어렵게 느껴질 때도 있었습니다. 그럼에도 그 길을 포기하지 않고 여기까지 올 수 있었던 것은 함께 기도하며 마음을 모아 주신 여러분이 계셨기 때문입니다.</p>
+      <p class="body-text">올해도 여러분의 후원으로 여러 곳에서 귀한 사역을 이어 갈 수 있었습니다.</p>
+      <p class="body-text">북한 이주민과 연변 조선족을 위한 선교, 중앙아시아 카자흐스탄의 고려인 장년과 청소년을 위한 사역이 계속되었지요. 특별히 카자흐스탄에서는 고려인들의 아픈 역사를 기억하고, 그 후손들이 새로운 희망을 품고 살아갈 수 있도록 돕는 일에 마음을 모았습니다. 지난 9월과 10월에는 제4회 카자흐스탄 평화기행을 다녀왔습니다. 현지 사역자들과 고려인들을 직접 만나 이야기를 듣고, 앞으로 함께할 일들을 생각하는 귀한 시간이었지요. 먼 나라의 이웃이라고 생각했지만, 만나고 보니 우리가 함께 기억하고 돌보아야 할 소중한 형제자매들이었습니다.</p>
+      <p class="body-text">평화교육과 연구도 꾸준히 이어 왔습니다. 한국교회가 평화의 복음을 더욱 깊이 이해하고 실천할 수 있도록 평화교실을 열었고, 목회자들과 함께 성서를 연구하는 ‘말씀의 잔치’도 계속하고 있습니다. 성서를 함께 읽고, 말씀을 나누고, 오늘 우리가 살아가는 세상에서 교회가 무엇을 해야 하는지 고민하는 자리이지요. 사순절과 대림절 묵상집을 만들어 나누는 일도 빼놓을 수 없습니다. 말씀을 통해 교회가 다시 평화의 길을 생각하도록 돕는 일이니 참으로 귀한 사역이라 생각합니다.</p>
+      <p class="body-text">이 모든 일이 어떻게 가능했을까요. 우리 법인에서 일하는 몇 사람의 수고만으로는 결코 할 수 없는 일입니다. 여러분이 보내주신 기도와 후원, 그리고 변함없는 관심이 있었기에 가능했지요. 후원금의 많고 적음이 중요한 것은 아닙니다. 그 안에 담긴 사랑과 정성이 얼마나 귀한지 잘 알고 있습니다. 여러분이 보내주신 후원은 누군가에게 배움의 기회가 되었고, 누군가에게는 어려운 삶을 견디는 힘이 되었으며, 또 다른 누군가에게는 내일을 꿈꾸는 희망이 되었습니다.</p>
+      <div class="pullquote"><p>&ldquo;후원은 누군가에게 배움의 기회가 되었고, 누군가에게는 어려운 삶을 견디는 힘이, 또 다른 누군가에게는 내일을 꿈꾸는 희망이 되었습니다.&rdquo;</p></div>
+      <p class="body-text"><strong>사랑하는 후원자 여러분.</strong></p>
+      <p class="body-text">요즘 세상을 바라보면 마음이 무거울 때가 많습니다. 한반도의 평화는 여전히 멀게만 느껴지고, 세계 곳곳에서는 전쟁과 갈등으로 고통받는 이웃들의 소식이 끊이지 않습니다. 사람과 사람 사이의 갈등도 깊어지고 있지요. 이런 때일수록 교회가 평화를 이야기해야 하지 않겠습니까. 평화를 가르치고, 평화를 위해 기도하며, 작은 일에서부터 평화를 만들어 가야 하지 않겠습니까.</p>
+      <p class="body-text">우리 법인도 지난 사역을 돌아보며 앞으로의 길을 새롭게 준비하고 있습니다. 오랫동안 이어 온 북한 이주민과 한민족 디아스포라 사역을 더욱 충실히 감당하고, 평화교육과 연구를 통해 한국교회와 사회에 필요한 역할을 찾아가려고 합니다. 특별히 카자흐스탄에서 시작된 새로운 협력이 지속적인 사역으로 이어질 수 있도록 힘을 모으려 합니다. 그곳에 살아가는 고려인들의 이야기가 잊히지 않고, 다음 세대에게 희망으로 이어지기를 바라는 마음입니다.</p>
+      <p class="body-text">그러나 이런 일들을 계속하려면 여러분의 도움이 필요합니다. 법인의 형편이 넉넉하지는 않습니다. 그렇다고 지금까지 해 온 귀한 사역을 멈출 수는 없겠지요. 여러분이 조금씩 마음을 모아 주시면 그 힘으로 또 한 걸음을 내디딜 수 있으리라 믿습니다.</p>
+      <p class="body-text">2027년에도 우리 법인이 하나님 나라의 평화를 이루어 가는 일에 충실할 수 있도록 기도해 주십시오. 그리고 지금까지 그래 오셨듯이 후원으로 함께해 주시면 참 고맙겠습니다.</p>
+      <p class="body-text">예수님께서는 “평화를 위하여 일하는 사람은 행복하다. 그들은 하나님의 자녀가 될 것이다”라고 말씀하셨지요. 우리 법인이 처음부터 붙들어 온 말씀이기도 합니다. 저는 이 말씀이 우리 법인에서 일하는 사람들만을 위한 약속은 아니라고 생각합니다. 평화를 위해 기도하는 분들, 귀한 물질로 후원하는 분들, 현장에서 이웃의 손을 잡아 주는 분들 모두에게 주시는 말씀이지요.</p>
+      <div class="pullquote"><p>그렇습니다.<br>여러분도 이미 우리와 함께 평화를 만드는 사람들입니다.</p></div>
+      <p class="body-text">한 해 동안 베풀어 주신 사랑을 오래도록 기억하겠습니다. 앞으로도 이 귀한 길을 함께 걸어갈 수 있기를 바랍니다.</p>
+      <p class="body-text">여러분의 교회와 가정, 그리고 하시는 모든 일 위에 하나님의 은혜와 평강이 늘 함께하시기를 기도합니다.</p>
+      <p class="body-text">참으로 고맙습니다.</p>
+      <p class="body-text" style="text-align:right;color:var(--text-gray);margin-top:34px">2026년 10월 21일<br>사단법인 참된평화를만드는사람들<br><strong style="color:var(--forest-900);font-size:18px">이사장 이은태 목사</strong></p>
+  </div>
+
+
+  <div class="ornament-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+
+
+  <div class="article" id="article-03">
+    <div class="article-head">
+      <div class="article-num">03</div>
+      <div class="article-heading">
+        <span class="section-label">사역 보고서</span>
+        <div class="article-title">2026 사역 보고서</div>
+        <div class="article-subtitle">“평화를 위하여 일하는 사람은 행복하다. 그들은 하나님의 자녀가 될 것이다!” — 마태복음 5장 9절</div>
+        <div class="article-byline">2026. 1. 1. ~ 10. 3. · 사단법인 참된평화를만드는사람들</div>
+<button class="tts-btn" data-article="article-03" onclick="toggleTTS('article-03', this)"><span class="tts-icon">🔊</span><span class="tts-label">이 글 듣기</span></button>
+      <select class="tts-rate" onchange="onRateChange(this)">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+      </div>
+    </div>
+  </div>
+  <div class="figs">
+      <div><strong>2,000<em>부</em></strong><span>2026 사순절 묵상집 발간</span></div>
+      <div><strong>388<em>부</em></strong><span>소식지 173호 발송<br>(국내 379 · 해외 9)</span></div>
+      <div><strong>12<em>명</em></strong><span>카자흐스탄 평화기행 참가</span></div>
+      <div><strong>6<em>박</em>7<em>일</em></strong><span>제4회 평화기행<br>9.27 – 10.3</span></div>
+    </div>
+
+  <div class="section-major" id="m01">
+    <div class="section-num">1</div>
+    <div class="section-title">말씀으로 여는 새해<br><small class="m-sub">JANUARY · 사순절 묵상집 발간 · 말씀의 잔치 · 네팔 지원</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">발간 사업</span>
+        <h4>2026 사순절 묵상집 『사랑으로 함께 걷는 고난의 여정』</h4>
+        <div class="when">2026년 1월 30일 발간</div>
+        <dl class="facts">
+          <div><dt>발간</dt><dd>2,000부 · 엮은이 (사)참된평화를만드는사람들</dd></div>
+          <div><dt>구성</dt><dd>재의 수요일(2월 18일)부터 부활주일(4월 5일)까지 성서정과 본문에 따른 매일 묵상, 「특별한 날의 묵상과 실천노트」</dd></div>
+          <div><dt>배포</dt><dd>후원자 발송 · 교회와 개인 판매(15건) · 작은교회와 여성목회자 교회 무료 발송</dd></div>
+        </dl>
+        <p>법인은 2013년부터 대림절과 사순절마다 성서정과를 따른 묵상집을 펴내고 있습니다. 올해 묵상집은 힘겨운 현실 속에서 그리스도인이 사랑으로 고난의 길을 먼저 걸으신 주님을 묵상하며 함께 걷자는 뜻으로 엮었습니다. 2월 중순부터 4월까지 후원자와 구입을 신청한 교회·개인에게 발송했고, 재정이 넉넉하지 않은 작은교회와 여성목회자 교회에는 무료로 보냈습니다.</p>
+        <ul class="notes"><li><b>성과</b>사순절 40일 동안 개인과 교회의 경건 생활을 돕는 교재를 2,000부 보급했고, 판매 수익을 다음 묵상집 발간 재원으로 보탰습니다.</li></ul>
+  </div>
+  <div class="entry">
+        <span class="kicker">연중 사역</span>
+        <h4>성서정과 말씀의 잔치 설교준비 모임</h4>
+        <div class="when">매주 화요일 오후 2시 · 한국기독교회관 306호 법인 사무실</div>
+        <dl class="facts">
+          <div><dt>대상</dt><dd>목회자와 평신도 누구나</dd></div>
+          <div><dt>방식</dt><dd>법인 연구원이 번역한 『말씀의 잔치-교회력에 따른 복음서 설교』를 교재로 생활 나눔, 성경공부, 설교 준비를 함께 진행</dd></div>
+          <div><dt>2026년 주제</dt><dd>교회력 마태의 해 — 마태복음 중심. 인도 김주용 사무총장, 가이드 이대성·홍상태 목사</dd></div>
+        </dl>
+        <p>모임은 1월부터 매주 이어졌습니다. 사무실에서는 주일 본문별 설교 자료를 미리 편집해 두었고, 6월부터는 이를 웹 자료로 제작해 온라인으로도 나누고 있습니다.</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">해외 협력</span>
+        <h4>네팔 환경 · 교육 지원</h4>
+        <div class="when">헤토다 지역 김경수 정주선교사와 협력한 평화 만들기</div>
+        <dl class="facts">
+          <div><dt>대상</dt><dd>네팔 헤토다 지역 김경수 선교사 (카트만두에서 서남쪽 약 80km, 자동차로 5시간)</dd></div>
+          <div><dt>내용</dt><dd>① 기후위기에 대응한 나무심기 ② 주일학교 교재 제작·배포(네팔어·영어)</dd></div>
+          <div><dt>방식</dt><dd>법인 지정후원 계좌를 통한 간접 지원 — 지정후원이 입금되면 현지로 전달</dd></div>
+        </dl>
+  </div>
+
+  <div class="section-major" id="m02">
+    <div class="section-num">2</div>
+    <div class="section-title">돌아보고, 새로 시작하다<br><small class="m-sub">FEBRUARY · 제19차 정기총회 · 평화교실 「희년신앙」</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">총회</span>
+        <h4>제19차 정기총회와 이사회</h4>
+        <div class="when">2026년 2월 12일(목) 11:30 · 기독교회관 1층 에이레네 홀</div>
+        <dl class="facts">
+          <div><dt>순서</dt><dd>개회예배(설교 이은태 이사장) → 정기총회: 감사보고, 회계보고, 사업보고, 안건 토의</dd></div>
+          <div><dt>안건</dt><dd>신임 사무총장 선임, 법인 이사 임명, 2026년 사업계획과 예산</dd></div>
+          <div><dt>결과</dt><dd>2025년 사업·결산 보고, 2026년 사업계획 승인, 김주용 목사 신임 사무총장 취임, 홍상태 목사 연구실장·이사 선임</dd></div>
+        </dl>
+        <div class="photo-single"><img src="images/176/img-02.jpg" alt="정기총회 후 기념 촬영"></div>
+      <p class="photo-caption">정기총회 후 기념 촬영</p>
+        <p>총회는 2025년 사업을 점검했습니다. 감사보고는 기존 사업이 꾸준히 이어졌고 특히 카자흐스탄 고려인 사업이 크게 진전되었다고 평가했습니다. 2025년에는 고려인 후원 사업에 후원자들의 지정 후원이 크게 모였습니다. 감사는 대림절 묵상집 집필자 워크숍, 사순절 묵상집의 새신자 교육 교재화, 말씀의 잔치 확대, 한인 디아스포라 연구서 출간을 제안했습니다.</p>
+        <div class="photo-grid">
+        <img src="images/176/img-03.jpg" alt="회순에 따른 보고와 안건 토의">
+        <img src="images/176/img-04.jpg" alt="신임 사무총장 취임 축하 꽃다발 전달">
+      </div>
+      <p class="photo-caption">회순에 따른 보고와 안건 토의 &nbsp;|&nbsp; 신임 사무총장 취임을 축하하는 꽃다발 전달</p>
+<ul class="notes"><li><b>신임 사무총장의 과제</b>법인의 역사 정리와 홈페이지 연혁 반영, 화요일 말씀의 잔치와 묵상집 출간 지속, 평화학의 관점에서 다층적인 평화 연구와 교육.</li></ul>
+  </div>
+  <div class="entry">
+        <span class="kicker">평화교실</span>
+        <h4>2월 평화교실 「희년신앙」</h4>
+        <div class="when">2026년 2월 24일(화) 오전 11시 · 기독교회관 306호 · 발표 김철호 목사(희년빚탕감상담소 소장)</div>
+        <p>평화교실은 한국교회의 평신도와 목회자를 위한 평화 공부 모임입니다. 2월의 주제는 경제 평화, 곧 희년 신앙이었습니다. 참석자에게 강의 자료를 제공했고, 저자 서명 도서를 증정했으며, 다과와 점심을 나누며 질의응답을 이어갔습니다.</p>
+        <ul class="notes">
+          <li><b>강의 내용</b>「빚진 죄인」이라는 오래된 인식을 성서의 희년 전통으로 다시 읽었습니다. 출애굽기 21~23장의 다섯 가지 행동법규(빚 탕감과 채무 노예 해방, 이자 금지와 약자 돌봄, 정의로운 재판, 안식일·안식년, 토지의 공공성)를 소개하고, 예수의 하나님나라 운동이 이 전통을 잇는 것임을 설명했습니다.</li>
+          <li><b>적용</b>희년빚탕감상담소의 무료 상담 사례를 통해 교회가 경제적 위기에 놓인 이웃과 어떻게 함께할 수 있는지 논의했습니다.</li>
+        </ul>
+        <div class="photo-grid">
+        <img src="images/176/img-05.jpg" alt="2월 평화교실 안내">
+        <img src="images/176/img-06.jpg" alt="법인 사무실에서 열린 평화교실">
+      </div>
+      <p class="photo-caption">2월 평화교실 안내 &nbsp;|&nbsp; 법인 사무실에서 열린 평화교실(2월 24일)</p>
+
+  </div>
+  <div class="entry">
+        <span class="kicker">절기 · 해외 협력</span>
+        <h4>재의 수요일, 사순절 시작과 네팔 지원</h4>
+        <div class="when">2월 18일 재의 수요일</div>
+        <p>2월 18일 재의 수요일과 함께 사순절이 시작되었습니다. 1월에 펴낸 묵상집을 후원자와 교회에 발송했습니다. 네팔에서는 현지에서 필요한 물품을 구매해 보내는 일을 도왔습니다.</p>
+  </div>
+
+  <div class="section-major" id="m03">
+    <div class="section-num">3</div>
+    <div class="section-title">고난의 길을 함께 걷다<br><small class="m-sub">MARCH · 사순절 · 소식지 발송 · 법인 보고</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">말씀 사역</span>
+        <h4>사순절 · 고난주간 말씀의 잔치</h4>
+        <div class="when">3월 29일 고난주일 · 4월 5일 부활주일</div>
+        <p>화요일 말씀의 잔치는 사순절 본문에 맞춰 진행되었습니다. 고난주일(3월 29일)과 부활주일(4월 5일, 요한복음 20장) 본문을 앞두고 사무실에서 매주 설교 자료를 정리·출력해 설교 준비를 도왔습니다.</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">소식지</span>
+        <h4>『평화세상』 173호 발송</h4>
+        <div class="when">3월 10일 · 국내 379부 · 해외(미국) 9부</div>
+        <p>1~2월의 사역과 후원자 명단을 담은 소식지 『평화세상』 173호를 국내외 후원자에게 우편으로 발송했습니다.</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">법인 보고</span>
+        <h4>2025년 법인 운영 현황 보고</h4>
+        <div class="when">3월 · 통일부</div>
+        <p>통일부 소속 사단법인으로서 2025년 연도말 보고서와 운영상황 요약표, 법인 운영 현황 보고 공문을 정리해 제출했습니다. 3월에는 네팔 지원금도 전달했습니다.</p>
+  </div>
+
+  <div class="section-major" id="m04">
+    <div class="section-num">4</div>
+    <div class="section-title">부활의 아침, 이어지는 만남<br><small class="m-sub">APRIL · 평화교실 · 봄 나들이 · 반가운 손님들</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">평화교실</span>
+        <h4>4월 평화교실 「북한 선교」</h4>
+        <div class="when">2026년 4월 7일(화) · 법인 사무실 · 발표 김기찬 목사(높은뜻정의교회 교육목사)</div>
+        <p>김기찬 목사는 논문 「1970년대 조선그리스도교연맹의 재부상과 그 요인에 관한 연구」를 바탕으로 발표했습니다. 조선그리스도교연맹은 1946년 설립된 뒤 한국전쟁과 사회주의 개조 속에서 위축되었고 1960년대에는 침묵하다가 1974년에 공식 활동을 재개했습니다.</p>
+        <ul class="notes">
+          <li><b>요인 분석</b>김일성 유일체제 완성(내부), 7·4 남북공동성명과 남한 기독교계의 민주화 운동(외부), 강량욱·김창준(인물).</li>
+          <li><b>의미</b>북한 교회에 대한 일방적 담론을 넘어 역사와 자료에 근거해 북한 기독교를 이해하려는 교육적 시도였습니다.</li>
+        </ul>
+        <div class="photo-grid">
+        <img src="images/176/img-07.jpg" alt="4월 7일 평화교실">
+        <img src="images/176/img-08.jpg" alt="발표 후 질의응답">
+      </div>
+      <p class="photo-caption">4월 7일 평화교실 &nbsp;|&nbsp; 발표 후 질의응답</p>
+
+  </div>
+  <div class="entry">
+        <span class="kicker">친교</span>
+        <h4>법인이사 봄 나들이</h4>
+        <div class="when">4월 13~14일 · 충남 부여 · 임규일 이사 초대</div>
+        <p>법인 이사들이 1박 2일로 부여를 다녀오며 법인의 지난 걸음과 앞으로의 일을 함께 나누었습니다.</p>
+        <div class="photo-single"><img src="images/176/img-09.jpg" alt="부여에서 함께한 법인 이사들"></div>
+      <p class="photo-caption">부여에서 함께한 법인 이사들</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">방문 · 협력</span>
+        <h4>카자흐스탄 신학생 방문, 「따뜻한 밥상」 전지욱 목사 방문</h4>
+        <div class="when">4월 27일 · 4월 30일 · 법인 사무실</div>
+        <p>4월 27일 카자흐스탄 신학생들이 법인 사무실을 찾아 다과를 나누었습니다. 4월 30일에는 일산 백석동 「따뜻한 밥상」의 전지욱 목사가 방문했으며, 이곳은 소식지의 첫 광고 후원 기관이 되었습니다.</p>
+        <div class="photo-single"><img src="images/176/img-10.jpg" alt="법인 사무실을 방문한 손님들"></div>
+      <p class="photo-caption">법인 사무실을 방문한 손님들</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">투명한 운영 · 해외 협력</span>
+        <h4>기부금 모금·활용 실적 공개와 네팔 지원</h4>
+        <div class="when">4월 29~30일</div>
+        <p>2025년 연간 기부금 모금액·활용실적 명세서를 4월 29일 접수하고 홈페이지에 게시했습니다. 법인 홈페이지를 블로그 형태로 전환하는 방안도 협의했습니다. 네팔 지원금은 4월 29~30일에 선교사 이체와 물품 구매 대행으로 전달했고, 직원 연구·교육에도 참여했습니다.</p>
+  </div>
+
+  <div class="section-major" id="m05">
+    <div class="section-num">5</div>
+    <div class="section-title">손님을 맞고, 길을 준비하다<br><small class="m-sub">MAY · 소식지 174호 · 말씀의 잔치 · 평화기행단 모집</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">소식지</span>
+        <h4>『평화세상』 174호 발간</h4>
+        <div class="when">3~4월 사역 · 5월 발송</div>
+        <p>3·4월 사역과 후원자 명단을 담은 소식지를 발송했습니다. 법인 이사 이근복 목사가 한민족선교정책연구소 시절을 정리한 글을 실었고, 소식지 광고 후원란을 신설했습니다.</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">말씀 사역</span>
+        <h4>말씀의 잔치 5월 본문</h4>
+        <div class="when">5월 12·19·26일 화요일 오후 2~4시 · 기독교회관 306호</div>
+        <p>부활절 이후 성서정과의 요한복음 본문(14:15-21, 17:1-11, 7:37-39)을 함께 읽었습니다. 진행은 김주용 사무총장이, 가이드는 이대성·홍상태 목사가 맡았습니다.</p>
+        <div class="photo-single"><img src="images/176/img-11.jpg" alt="5월 성서정과와 말씀의 잔치 안내"></div>
+      <p class="photo-caption">5월 성서정과와 말씀의 잔치 안내</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">방문 · 소통</span>
+        <h4>윤신영 목사 방문 · 블로그 제작 · 후원자 감사 문자</h4>
+        <div class="when">5월 21일 · 5월 26일</div>
+        <p>5월 21일 동북아문화역사연구원장 윤신영 목사(전 법인 사무총장)가 사무실을 방문했습니다. 재단 블로그를 만들기 시작했고, 5월 26일에는 후원자들께 감사 문자를 보냈습니다.</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">해외 협력</span>
+        <h4>카자흐스탄 평화기행단 모집</h4>
+        <div class="when">5월 소식지와 안내물로 모집</div>
+        <p>일 년에 한 번 카자흐스탄 평화기행을 통해 한국교회가 잊고 있던 고려인의 이야기를 이어 가려 합니다. 5월부터 기행단을 모집했고, 최종적으로 9월 27일 출발로 확정되었습니다.</p>
+  </div>
+
+  <div class="section-major" id="m06">
+    <div class="section-num">6</div>
+    <div class="section-title">감사로 맞은 새로운 출발<br><small class="m-sub">JUNE · 평화교실 · 자문위원 위촉 · 감사의 날 · AI 강의</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">평화교실</span>
+        <h4>6월 평화교실 「남북통일 운동의 이해」</h4>
+        <div class="when">2026년 6월 9일(화) 오전 11시 · 기독교회관 306호 · 발표 이우성 목사(수원성교회 교육목사)</div>
+        <p>북한이 남북을 「적대적 두 국가」로 규정하면서 기존 통일 담론이 길을 잃은 오늘, 일찍이 경계를 넘어 대화를 시도한 홍동근 목사(1926~2001)의 삶을 소개했습니다.</p>
+        <ul class="notes"><li><b>의미</b>분단 시대 그리스도인이 누구인지 답하는 「평화를 만드는 신학」, 그리고 남북이 함께 나눌 수 있는 「한국 신학」을 준비하는 길을 살폈습니다.</li></ul>
+        <div class="photo-grid">
+        <img src="images/176/img-12.jpg" alt="6월 평화교실 안내">
+        <img src="images/176/img-13.jpg" alt="6월 9일 평화교실">
+      </div>
+      <p class="photo-caption">6월 평화교실 안내 &nbsp;|&nbsp; 6월 9일 평화교실</p>
+
+  </div>
+  <div class="entry">
+        <span class="kicker">자문위원</span>
+        <h4>홍승만 교수 자문위원 위촉</h4>
+        <div class="when">6월 9일(화) · 법인 사무실</div>
+        <p>평화교실 자리에서 서울기독대학교 홍승만 교수(목사)에게 자문위원 위촉장을 드렸습니다. 선교학 분야의 전문성을 법인의 연구와 교육에 보태 주실 것으로 기대합니다.</p>
+        <div class="photo-grid">
+        <img src="images/176/img-14.jpg" alt="자문위원 위촉장 수여">
+        <img src="images/176/img-15.jpg" alt="위촉식과 평화교실을 마치고">
+      </div>
+      <p class="photo-caption">자문위원 위촉장 수여 &nbsp;|&nbsp; 위촉식과 평화교실을 마치고</p>
+
+  </div>
+  <div class="entry">
+        <span class="kicker">감사의 날</span>
+        <h4>법인 도서·자료 이전 감사의 날</h4>
+        <div class="when">6월 11일(목) 오전 11:30 · 생명살림교회(서울 강북구)</div>
+        <p>법인이 오랫동안 쌓아 온 도서와 자료를 생명살림교회(홍상태 목사)로 옮기며 그 수고에 감사를 전했습니다. 1부는 감사 나눔과 현판식, 이사장의 기도, 2부는 식사와 교제로 진행했습니다.</p>
+        <div class="photo-grid">
+        <img src="images/176/img-16.jpg" alt="감사의 마음을 전하는 자리">
+        <img src="images/176/img-17.jpg" alt="2부 식사와 교제">
+      </div>
+      <p class="photo-caption">감사의 마음을 전하는 자리 &nbsp;|&nbsp; 2부 식사와 교제</p>
+
+  </div>
+  <div class="entry">
+        <span class="kicker">평화교실</span>
+        <h4>「나의 목회 비서 AI」 — 목회 코파일럿 활용 기초</h4>
+        <div class="when">6월 16일(화) · 법인 사무실 · 강의 김성국 목사(법인 간사)</div>
+        <p>법인 간사가 목회 코파일럿으로 AI를 설교 준비와 행정에 쓰는 기초를 1:1로 안내했습니다.</p>
+        <div class="photo-single"><img src="images/176/img-18.jpg" alt="AI 활용 기초 강의 현장"></div>
+      <p class="photo-caption">AI 활용 기초 강의 현장</p>
+        <ul class="notes"><li><b>그 밖에</b>6월 30일 네팔 지원금을 전달했고, 연간 기부금 모금·활용실적 명세서를 블로그에도 게시했습니다.</li></ul>
+  </div>
+
+  <div class="section-major" id="m07">
+    <div class="section-num">7</div>
+    <div class="section-title">온라인으로 더 가까이<br><small class="m-sub">JULY · 소식지 175호 온라인 발행 · 정례 모임</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">소식지</span>
+        <h4>『평화세상』 175호, 온라인 첫 발행</h4>
+        <div class="when">5~6월 사역 · 7월 초</div>
+        <p>175호부터 소식지를 온라인으로 발행해 더 많은 후원자와 더 자주 만나도록 했습니다. 사무총장의 여는 글, 이사장의 편지, 6월 평화교실 강의, 홍동근 목사 연보, 간사의 편지, 6월 법인 소식과 후원자 명단을 실었습니다.</p>
+        <div class="photo-single"><img src="images/176/img-19.jpg" alt="온라인으로 발행한 평화세상 175호"></div>
+      <p class="photo-caption">온라인으로 발행한 『평화세상』 175호</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">정례 모임</span>
+        <h4>화요일 · 목요일 · 매월 마지막 주 금요일</h4>
+        <div class="when">법인 사무실</div>
+        <p>법인의 주간은 말씀과 평화로 짜여 있습니다. 화요일에는 성서정과 말씀의 잔치, 목요일에는 평화학 연구 모임(평화나무), 매월 마지막 주 금요일에는 회복적 정의를 배우고 실천하는 평화실천모임을 이어 가고 있습니다.</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">준비</span>
+        <h4>카자흐스탄 항공권 구매와 후원자 관리</h4>
+        <div class="when">7월 15일 · 7월 22일</div>
+        <p>7월 22일 평화기행단의 항공권 10매를 구매했고, 9월 평화교실 홍보물을 준비했습니다. 신규 후원자 주소록을 정리해 소식지 발송 명단에 반영했습니다.</p>
+  </div>
+
+  <div class="section-major" id="m08">
+    <div class="section-num">8</div>
+    <div class="section-title">먼 길을 준비하는 여름<br><small class="m-sub">AUGUST · 카자흐스탄 평화기행 준비 · 온라인 소통 확대</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">평화기행 준비</span>
+        <h4>제4회 카자흐스탄 평화기행 준비</h4>
+        <div class="when">2026년 9월 27일(일) ~ 10월 3일(토), 6박 7일</div>
+        <dl class="facts">
+          <div><dt>참가</dt><dd>12명(남 8, 여 4) — 법인 실무자와 이사, 후원자</dd></div>
+          <div><dt>현지 협력</dt><dd>김상길 목사(알마티 시온교회, 카자흐스탄 선교 30주년), 김광선 목사, 김상욱 고려문화원장</dd></div>
+          <div><dt>준비</dt><dd>참가자 확정, 비행경비 정리, 기행단 핸드북(일정·비상연락처·현지 사역자 소개·고려인 역사 자료)</dd></div>
+          <div><dt>경비</dt><dd>참가자들이 별도 계좌에 낸 참가비로 운영하며 법인 사업비와 구분해 정산</dd></div>
+        </dl>
+        <p>법인이 가장 중요하게 준비하는 일은 카자흐스탄 박박티(Baqbaqty) 마을의 「고려인 기억박물관 및 공동체 센터」입니다. 마을에는 고려인 어르신들이 아직 살고 계시지만 젊은 세대는 도시로 떠나고 있어, 강제이주의 기억과 신앙·독립운동의 흔적이 기록되지 않으면 사라질 수 있습니다. 올해 평화기행은 현지 사역을 이어 가는 첫걸음입니다.</p>
+  </div>
+  <div class="entry">
+        <span class="kicker">온라인 소통</span>
+        <h4>새 홈페이지 준비와 소식지 안내 문자</h4>
+        <div class="when">8월 4일 이후 · 8월 12일</div>
+        <p>재단 홈페이지 템플릿을 선정해 새 홈페이지 제작을 준비했고, 8월 12일 후원자 195명에게 소식지 안내 문자를 보냈습니다. 말씀의 잔치는 웹자료로 제작해 공유했습니다.</p>
+  </div>
+
+  <div class="section-major" id="m09">
+    <div class="section-num">9</div>
+    <div class="section-title">알마티로, 기억을 찾아서<br><small class="m-sub">SEPTEMBER · 제4회 카자흐스탄 평화기행 출발 · 네팔·카자흐스탄 지원</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">해외 협력</span>
+        <h4>카자흐스탄 고려인 지원과 네팔 지원</h4>
+        <div class="when">9월 1일 · 9월 22일</div>
+        <dl class="facts">
+          <div><dt>네팔</dt><dd>9월 1일 선교사 이체 — 1~9월 9회 지원금 전달</dd></div>
+          <div><dt>장학금</dt><dd>9월 22일 독립운동가 후손 장학금 마련 — 평화기행 중 고려문화원 방문 일정에 전달</dd></div>
+          <div><dt>현판</dt><dd>「카자흐스탄 참된평화를만드는사람들」 현판 제작</dd></div>
+          <div><dt>법인 운영</dt><dd>9월 16일 1~8월 월별 장부를 세무법인에 제출</dd></div>
+        </dl>
+  </div>
+  <div class="entry">
+        <span class="kicker">평화기행</span>
+        <h4>제4회 카자흐스탄 평화기행 (1) — 알마티 · 고려문화원 · 우슈토베</h4>
+        <div class="when">9월 27일(일) ~ 29일(화)</div>
+        <dl class="facts">
+          <div><dt>9/27 (일)</dt><dd>인천 출발, 저녁 알마티 도착</dd></div>
+          <div><dt>9/28 (월)</dt><dd>침볼락 방문, 고려문화원에서 고려인 역사 강의와 간담회, 장학금·기부금 전달</dd></div>
+          <div><dt>9/29 (화)</dt><dd>우슈토베 방문 — 고려인 이야기 듣기, 방문 선물 나눔, 헌금 전달</dd></div>
+        </dl>
+        <p class="footnote">※ 일정은 사전 계획과 현장 사진을 바탕으로 정리했으며, 현지 사정에 따라 일부 조정되었을 수 있습니다.</p>
+        <div class="photo-single"><img src="images/176/img-20.jpg" alt="알마티 공항에 도착한 기행단"></div>
+      <p class="photo-caption">9월 27일, 알마티 공항에 도착한 기행단</p>
+        <div class="photo-grid">
+        <img src="images/176/img-21.jpg" alt="알마티 근교 침볼락">
+        <img src="images/176/img-22.jpg" alt="고려문화원 고려인 역사교실">
+      </div>
+      <p class="photo-caption">알마티 근교 침볼락 &nbsp;|&nbsp; 고려문화원 「고려인 역사교실」</p>
+<div class="photo-single"><img src="images/176/img-23.jpg" alt="우슈토베 방문"></div>
+      <p class="photo-caption">우슈토베 방문(9월 29일)</p>
+  </div>
+
+  <div class="section-major" id="m10">
+    <div class="section-num">10</div>
+    <div class="section-title">평화기행을 마치고<br><small class="m-sub">OCTOBER · 제4회 카자흐스탄 평화기행 마무리 (10월 3일까지)</small></div>
+  </div>
+  <div class="entry">
+        <span class="kicker">평화기행</span>
+        <h4>제4회 카자흐스탄 평화기행 (2) — 자연과 교제, 현판식, 귀국</h4>
+        <div class="when">9월 30일(수) ~ 10월 3일(토)</div>
+        <dl class="facts">
+          <div><dt>9/30 ~ 10/1</dt><dd>쿨사이 호수, 차른 계곡, 카인디 호수</dd></div>
+          <div><dt>10/2 (금)</dt><dd>사과농장·시내 방문 후 감사의 시간, 카자흐스탄 법인 현판식</dd></div>
+          <div><dt>10/3 (토)</dt><dd>인천공항 도착, 6박 7일의 평화기행을 마침</dd></div>
+        </dl>
+        <div class="photo-single"><img src="images/176/img-24.jpg" alt="카자흐스탄 법인 현판식"></div>
+      <p class="photo-caption">카자흐스탄 법인 현판식</p>
+        <ul class="notes">
+          <li><b>성과</b>고려인 후손과 현지 사역자를 직접 만나 지원 사업의 필요를 확인했고, 기억박물관과 장학 사업을 이어 갈 현지 협력 관계를 다졌습니다. 상세 결과 보고와 경비 정산은 별도로 정리합니다.</li>
+          <li><b>10월 초 행정</b>9월 입출금 정리, 카자흐스탄 기행 입출금 정리, 직원 회의를 진행했습니다.</li>
+        </ul>
+  </div>
+
+
+  <div class="ornament-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+
+
+  <div class="article" id="article-04">
+    <div class="article-head">
+      <div class="article-num">04</div>
+      <div class="article-heading">
+        <span class="section-label">법인 소식</span>
+        <div class="article-title">평화교실 with 훈훈책방</div>
+        <div class="article-subtitle">제4회 고려인 평화기행, 그 두 번째 이야기</div>
+<button class="tts-btn" data-article="article-04" onclick="toggleTTS('article-04', this)"><span class="tts-icon">🔊</span><span class="tts-label">이 글 듣기</span></button>
+      <select class="tts-rate" onchange="onRateChange(this)">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+      </div>
+    </div>
+  </div>
+  <div class="body-copy">
+<div class="event">
+      <div class="event-top"><span>PEACE CLASS</span><span>with 훈훈책방</span></div>
+      <div class="event-body">
+        <p class="event-kicker">제4회 고려인 평화기행<br>그 두 번째 이야기</p>
+        <h3 class="event-title"><small>&lt;</small>뭉우리돌의 광야<small>&gt;</small></h3>
+        <p class="event-with">김동우 작가님과의</p>
+        <p class="event-talk">북토크</p>
+      </div>
+      <dl class="event-info">
+        <div><dt>일정</dt><dd><strong>11월 28일 (토) 17:00</strong></dd></div>
+        <div><dt>장소</dt><dd><strong>훈훈책방</strong><span>고양시 덕양구 화신로73 2층</span></dd></div>
+      </dl>
+    </div>
+  
+  </div>
+
+
+  <div class="ornament-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+
+
+  <div class="article" id="article-05">
+    <div class="article-head">
+      <div class="article-num">05</div>
+      <div class="article-heading">
+        <span class="section-label">Next Steps</span>
+        <div class="article-title">남은 일정과 후원 요청</div>
+        <div class="article-subtitle">남은 기간 법인은 아래 일을 준비하고 있습니다.</div>
+<button class="tts-btn" data-article="article-05" onclick="toggleTTS('article-05', this)"><span class="tts-icon">🔊</span><span class="tts-label">이 글 듣기</span></button>
+      <select class="tts-rate" onchange="onRateChange(this)">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+      </div>
+    </div>
+  </div>
+  <div class="body-copy">
+<div class="next">
+      <ol>
+        <li><div><strong>대림절 묵상집</strong><span>2026 대림절 묵상집을 펴내 한국교회와 작은교회에 보급합니다.</span></div></li>
+        <li><div><strong>평화통일 포럼</strong><span>12월 18일(예정) 송년예배와 「한인 디아스포라 사역과 평화통일, 교회의 과제」 강연, 후원교회·회원 만남.</span></div></li>
+        <li><div><strong>고려인 후원</strong><span>박박티 고려인 마을의 겨울철 난방용 석탄 지원, 독립운동가를 소개하는 2027년 달력 제작, 기억박물관 준비를 이어 갑니다.</span></div></li>
+        <li><div><strong>네팔 지원</strong><span>지정후원을 현지에 전달하고 나무심기와 주일학교 교재 사업을 돕습니다.</span></div></li>
+        <li><div><strong>소통</strong><span>새 홈페이지와 블로그를 열고 온라인 소식지를 이어 갑니다.</span></div></li>
+        <li><div><strong>카자흐스탄 지부 집기물</strong><span>책상, 의자, 컴퓨터를 후원해 주십시오.</span></div></li>
+        <li><div><strong>법인 사무실 프린트</strong><span>칼라 잉크 프린트를 후원해 주십시오.</span></div></li>
+      </ol>
+    </div>
+    <div class="ask"><b>작은 나눔이 먼 곳의 새로운 만남이 됩니다</b><p>후원 방법과 계좌는 이어지는 「후원 감사」 면에 안내해 두었습니다. 정기후원(CMS 자동이체) · 일시후원 · 물품후원 모두 가능하며, 네팔·카자흐스탄 등 사업을 지정해 후원하실 수 있습니다.</p></div>
+  
+  </div>
+
+
+  <div class="ornament-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+
+  <div class="article" id="article-06">
+    <div class="article-head">
+      <div class="article-num">06</div>
+      <div class="article-heading">
+        <span class="section-label">후원 감사</span>
+        <div class="article-title">후원해 주셔서 고맙습니다</div>
+        <div class="article-byline">후원해 주신 개인과 교회 명단</div>
+<button class="tts-btn" data-article="article-06" onclick="toggleTTS('article-06', this)"><span class="tts-icon">🔊</span><span class="tts-label">이 글 듣기</span></button>
+      <select class="tts-rate" onchange="onRateChange(this)">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+      </select>
+      </div>
+    </div>
+  </div>
+  <div class="body-copy">
+
+    <div class="sublist-head">법인이사</div>
+    <p class="sublist-body">이은태 목사(이사장, 제광교회 원로목사), 이근복 목사(목회자 마음돌봄센터 이사장), 임규일 목사(만성교회 원로목사), 임대식 목사(평화교회 원로목사), 고현영 목사(수송교회), 김종언 목사(황지교회), 홍인식 목사(스페인개신교대학교 교수), 홍은해 목사(부평소망교회 담임목사)</p>
+
+    <div class="sublist-head">후원이사 및 기관 회원</div>
+    <p class="sublist-body">등대선교회(권봉길 목사), 만성교회(전광현 목사), 부평소망교회(홍은해 목사), 부전교회, 분당가나안교회(장경덕 목사), 삼가리교회(김은철 목사), 생명살림교회(홍상태 목사), 서귀포교회(박동국 목사), 수원성교회(이경희 목사), 새빛교회(김용일 목사), 제주 행복한 집(배순옥 목사), 오륙선교회(최태순 목사), 운천제일교회(이세호 목사), 울산교회(이호상 목사), 의정부동부교회(강철 목사), 제광교회(유병택 목사), 제주한림교회(김효근 목사), 청운교회(정상식 목사), 포항양학교회(황병기 목사), 파평교회, 평화교회(김재욱 목사), 평화교회(김주용 목사), 황지교회(김종언 목사), 필그림선교교회(미국, 권희창 목사), 만남의교회(미국, 이정현 목사)</p>
+
+    <div class="sublist-head">개인/기업 회원</div>
+    <p class="sublist-body">강대은-홍정옥, 고영주, 구자남, 권수옥, 김기찬, 김석련, 김석주, 김영미, 김영빈, 김용진, 김정순, 김주용, 김철호-김옥연, 김충호, 김혜란, 배순옥, 변금숙, 신계화, 안홍철, 유희석, 이고은, 이명신, 이복순, 이봉숙, 이생구, 이영애, 이은태-이복순, 장신애, 전은희, 정정훈, 정진구, 조영부, 주혜주, 최상남, 최성숙, 최종우, 한경균, 한덕수, 홍성심, 황선탁, 황인자, (주)애드스틸, ㈜시터피아, 익명후원자</p>
+
+    <div class="sublist-head">CMS 자동이체 정기회원</div>
+    <p class="sublist-body">강경민, 강길종, 강수연, 강성민, 강익수(김진심), 고대현, 고현, 고은희(허종윤), 고연자, 고인숙, 김경종, 김경원, 김광정, 김미자, 김동미, 김동옥, 김명신, 김민탁, 김병철, 김복희, 김봉민, 김삼곤, 김상순, 김석련, 김성식, 김수경, 김응희(현영실), 김영실, 김용진, 김은희, 김예선, 김진심, 김정옥, 김재숙(이주영), 김호남, 김형숙, 김태희, 모연섭, 문지혜, 박금미, 박명자, 박성훈, 박영심, 박정주, 박원하(변금숙), 박종대, 박지현, 박찬임, 박희경, 부혜영, 소현정, 송복임, 신성조(현은선), 신성은(오유미), 신재필, 안갑식, 안성기, 양광신, 양선화, 양옥희, 양유진, 엄진용, 오성철, 오웅진, 오치덕, 유인순, 유희석, 윤미경, 윤성실, 윤무진(송혜경), 이남희, 이도숙, 이미숙, 이선경(김재근), 이성덕, 이성철, 이승우, 이은성(김양숙), 이화자, 이혜린(양수용), 이혜은, 전유진, 전은순, 정순자, 정연희, 조영랑, 진민경, 진영순, 주혜주, 최인덕, 허종윤, 한정훈, 한현지, 현혜경, 홍금희, 홍동희, 홍은실(김광정), 홍인선, 황철희, 황희영</p>
+
+    <div class="note-box">* 명단이 누락되었거나 잘못 기재되었다면 사무실로 연락해 주시기 바랍니다.</div>
+
+    <div class="sublist-head">사역 소개</div>
+    <p class="body-text" style="font-size: 16.2px;">사단법인 참된평화를만드는사람들은 기독교 관점에서 평화 사역을 하기 위해서 설립된 NGO입니다. 평화를 만들기 위한 연구, 교육, 사업이 균형을 이룰 수 있도록 한국 사회와 동북 및 중앙 아시아 지역에 나눔과 봉사를 통해서 평화를 만들어 가고 있습니다.</p>
+    <p class="sublist-body"><strong>1. 평화를 만드는 연구와 교육</strong><br>
+    1) 평화연구 — 평화와 통일을 위한 연구 / 평화 세미나, 평화를 만드는 기독교와 교회 연구<br>
+    2) 평화교육 — 한민족 평화와 화해 교육, 평화 기행을 통한 평화 만들기 교육, 평화를 위한 회복적 정의 교육</p>
+    <p class="sublist-body"><strong>2. 평화를 만드는 사역과 사업</strong><br>
+    1) 한인 디아스포라 지원 사업 — 중국 조선족 장학지원 사업, 카자흐스탄 고려인 석탄지원 사업, 고려인 독립운동가 후손 장학사업, 고려인 청소년 교류사업<br>
+    2) 동포 나눔 사업 — 라진·선봉 지역 주민 쌀, 토끼, 오리 지원사업, 북한 오리농장 지원 사업</p>
+
+    <div class="sublist-head">함께 하는 사람들</div>
+    <div class="role-row"><span class="role-title">이 사 장</span><span>이은태 · 제주제광교회 원로목사</span></div>
+    <div class="role-row"><span class="role-title">부이사장</span><span>이근복 · 목회자 마음돌봄센터 이사장</span></div>
+    <div class="role-row"><span class="role-title"></span><span>홍은해 · 부평소망교회 담임목사</span></div>
+    <div class="role-row"><span class="role-title">법인이사</span><span>고현영 · 수송교회 위임목사</span></div>
+    <div class="role-row"><span class="role-title"></span><span>임광빈 · 의주로교회 담임목사</span></div>
+    <div class="role-row"><span class="role-title"></span><span>임규일 · 만성교회 원로목사</span></div>
+    <div class="role-row"><span class="role-title"></span><span>임대식 · 평화교회 원로목사</span></div>
+    <div class="role-row"><span class="role-title"></span><span>홍인식 · 스페인개신교대학교(SETU) 교수</span></div>
+    <div class="role-row"><span class="role-title"></span><span>김종언 · 황지교회 위임목사</span></div>
+    <div class="role-row"><span class="role-title"></span><span>홍상태 · 생명살림교회 담임목사</span></div>
+    <div class="role-row"><span class="role-title">법인감사</span><span>이대성 목사(사업) / 한정훈 공인회계사(회계)</span></div>
+    <div class="role-row"><span class="role-title">사무총장</span><span>김주용 · 평화교회 담임목사</span></div>
+    <div class="role-row"><span class="role-title">행정간사</span><span>김성국 목사</span></div>
+    <div class="role-row"><span class="role-title">연구실장</span><span>홍상태 목사</span></div>
+    <div class="role-row"><span class="role-title">법인연구원</span><span>고현영 목사, 이대성 목사, 홍인식 목사</span></div>
+
+    <div class="sublist-head">후원 안내</div>
+    <p class="sublist-body">
+    <strong>정기후원</strong> — 후원자님의 은행 계좌에서 지정하신 날짜에 자동 이체됩니다.<br>
+    <strong>일시후원</strong> — 정기후원자를 포함한 모든 분들이 언제든 참여 가능합니다.<br>
+    <strong>물품후원</strong> — 도움이 절실히 필요한 한인 디아스포라 이웃에게 꼭 필요한 물품을 지원합니다.
+    </p>
+
+    <div class="acct-row"><span>국민은행</span><span>008601-04-045572</span></div>
+    <div class="acct-row"><span>우리은행</span><span>1005-301-334416</span></div>
+    <div class="acct-row"><span>하나은행</span><span>630-006855-634</span></div>
+    <div class="acct-row"><span>신한은행</span><span>100-024-463530</span></div>
+    <div class="acct-row"><span>우체국</span><span>010793-01-006674</span></div>
+    <div class="acct-row"><span>농협</span><span>027-01-518587</span></div>
+    <p class="acct-owner">예금주 (사)참된평화를만드는사람들</p>
+
+    <div class="qr-box">
+      <div class="qr-item">
+        <div class="qr-label">법인 후원 QR코드</div>
+        <a href="https://v3.ngocms.co.kr/system/member_signup/join_option_select_03.html?id=hvap1004" target="_blank" rel="noopener"><img src="images/176/donate-qr.png" alt="법인 후원 QR코드"></a>
+      </div>
+      <div class="qr-item">
+        <div class="qr-label">후원 링크</div>
+        <a class="donate-link" href="https://v3.ngocms.co.kr/system/member_signup/join_option_select_03.html?id=hvap1004" target="_blank" rel="noopener">정기후원<br>신청하기 →</a>
+      </div>
+    </div>
+
+    <div class="closing-block">
+      <p class="closing-verse">&ldquo;평화를 위하여 일하는 사람은 행복하다. 그들은 하나님의 자녀가 될 것이다!&rdquo;<span class="pq-source">— 마태복음 5장 9절</span></p>
+      <div class="closing-logo">
+        <img src="images/176/org-logo.png" alt="사단법인 참된평화를만드는사람들 THE PEACE MAKERS IN KOREA">
+      </div>
+    </div>
+
+  </div>
+  <!-- 동역자 의견 나눔 -->
+  <div class="article" id="article-opinion">
+    <div class="article-head">
+      <div class="article-heading">
+        <span class="section-label">의견 나눔</span>
+        <div class="article-title">동역자 여러분들의 의견을 기다립니다</div>
+        <div class="article-byline">소식지에 대한 의견이나 나누고 싶은 말씀을 자유롭게 남겨주세요</div>
+      </div>
+    </div>
+  </div>
+  <div class="body-copy">
+
+    <form id="opinion-form" class="opinion-form">
+      <input type="text" id="opinion-name" class="opinion-input" placeholder="이름 (선택 사항)" />
+      <textarea id="opinion-content" class="opinion-textarea" placeholder="의견을 입력해주세요" required rows="4"></textarea>
+      <button type="submit" class="opinion-submit">의견 남기기</button>
+      <p id="opinion-status" class="opinion-status"></p>
+    </form>
+
+    <div id="opinion-list" class="opinion-list"></div>
+
+  </div>
+
+</div>
+
+<script>
+
+(function() {
+  var currentId = null;
+  var currentBtn = null;
+  var currentRate = 1;
+  var bestVoice = null;
+  var currentSentences = [];
+  var currentIndex = 0;
+  // 재생 세션마다 하나씩 증가하는 토큰. cancel() 이후에도 뒤늦게 날아오는
+  // "이전 세션" 발화의 onstart/onend/onerror 콜백이 currentIndex/currentId를
+  // 잘못 건드리지 못하도록 막는 용도 (배속 변경 시 처음으로 되돌아가던 버그의 원인).
+  var playToken = 0;
+
+  function pickBestVoice() {
+    var voices = window.speechSynthesis.getVoices() || [];
+    var ko = voices.filter(function(v) { return v.lang && v.lang.toLowerCase().indexOf('ko') === 0; });
+    if (!ko.length) return null;
+    // 로컬/저품질(예: eSpeak, Compact) 보다 온라인/고품질 음성을 최우선으로 선택
+    var scored = ko.slice().sort(function(a, b) {
+      function score(v) {
+        var n = v.name.toLowerCase();
+        var s = 0;
+        if (!v.localService) s += 3;               // 온라인(네트워크) 음성이 대체로 더 자연스러움
+        if (n.indexOf('google') !== -1) s += 3;     // 안드로이드/크롬의 Google 고품질 음성
+        if (n.indexOf('neural') !== -1) s += 4;
+        if (n.indexOf('wavenet') !== -1) s += 4;
+        if (n.indexOf('natural') !== -1) s += 3;
+        if (n.indexOf('online') !== -1) s += 2;
+        if (n.indexOf('plus') !== -1) s += 1;
+        // iOS/사파리는 음성이 전부 localService=true라서, 이름에 붙는 품질 표시로 구분
+        if (n.indexOf('enhanced') !== -1) s += 4;
+        if (n.indexOf('premium') !== -1) s += 5;
+        if (n.indexOf('yuna') !== -1 || n.indexOf('sora') !== -1 || n.indexOf('injoon') !== -1) s += 1;
+        if (n.indexOf('compact') !== -1) s -= 5;
+        if (n.indexOf('espeak') !== -1) s -= 5;
+        return s;
+      }
+      return score(b) - score(a);
+    });
+    return scored[0];
+  }
+  function ensureVoice(cb) {
+    if (bestVoice) { cb(); return; }
+    bestVoice = pickBestVoice();
+    cb(); // 음성 목록이 아직 없어도(null이어도) 즉시 재생을 시작함 (아래 설명 참고)
+  }
+  // 음성 목록은 백그라운드에서 별도로 계속 갱신 (사용자 클릭과 무관하게 준비해둠).
+  // 예전에는 ensureVoice가 voiceschanged 이벤트나 setTimeout으로 재생을 지연시켰는데,
+  // 안드로이드(갤럭시) 브라우저는 이렇게 클릭 직후 비동기로 지연되면 "사용자가 직접 눌렀다"는
+  // 판정이 끊겨서 소리 자체가 아예 안 나오는 경우가 있었음. 이제는 클릭하면 무조건 그 순간
+  // 바로 speak()를 호출하고, 더 좋은 음성은 이미 준비돼 있으면 쓰고 아니면 기본 음성으로
+  // 우선 재생한 뒤 다음 문장부터 자동으로 좋은 음성이 적용되게 함.
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = function() {
+      bestVoice = pickBestVoice();
+    };
+    // 일부 브라우저는 로드 시점에 이미 목록이 차 있어 이벤트가 안 뜨기도 함 -> 한 번 시도
+    bestVoice = pickBestVoice();
+  }
+
+  function getArticleText(articleId) {
+    var startEl = document.getElementById(articleId);
+    if (!startEl) return '';
+    var parts = [];
+    var titleEl = startEl.querySelector('.article-title');
+    if (titleEl) parts.push(titleEl.innerText);
+    var el = startEl.nextElementSibling;
+    while (el && !el.classList.contains('article')) {
+      if (el.classList.contains('ornament-divider')) break;
+      var t = (el.innerText || '').trim();
+      if (t) parts.push(t);
+      el = el.nextElementSibling;
+    }
+    return parts.join('. ').replace(/\s+/g, ' ').replace(/\.{2,}/g, '.').trim();
+  }
+
+  // 문장 단위로 잘라서 각각 별도 발화로 큐에 쌓으면, 긴 글 전체를 하나로 읽을 때보다
+  // 문장 사이의 자연스러운 끊어읽기(호흡)가 생기고 억양도 덜 단조로워짐
+  // + 배속을 바꿀 때 "지금 읽고 있던 문장부터" 이어갈 수 있는 단위도 됨
+  function splitIntoSentences(text) {
+    var raw = text.match(/[^.!?]+[.!?]*/g) || [text];
+    return raw.map(function(s) { return s.trim(); }).filter(Boolean);
+  }
+
+  function resetBtn(btn) {
+    if (!btn) return;
+    btn.classList.remove('playing');
+    btn.querySelector('.tts-label').textContent = '이 글 듣기';
+    btn.querySelector('.tts-icon').textContent = '\u{1F50A}';
+  }
+
+  // iOS(사파리)는 동일한 rate 값이라도 데스크톱/안드로이드보다 훨씬 빠르게 들리는
+  // 알려진 플랫폼 특성이 있어, 표시되는 배속(0.75x/1x/1.25x...)은 그대로 두고
+  // 실제로 음성엔진에 전달하는 값만 살짝 낮춰서 체감 속도를 맞춘다
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  function getEffectiveRate(nominalRate) {
+    return isIOS ? nominalRate * 0.85 : nominalRate;
+  }
+
+  // fromIndex부터 currentSentences를 이어서 재생 (배속 변경 시 이어듣기에도 재사용)
+  function speakFrom(articleId, btn, rate, fromIndex) {
+    currentId = articleId; currentBtn = btn;
+    // 이 재생 세션만의 토큰. cancel()로 폐기된 이전 세션의 발화가 뒤늦게
+    // onstart/onend/onerror를 발생시켜도 아래 콜백들이 myToken 검사로 걸러내
+    // currentIndex/currentId를 건드리지 못하게 한다 (배속 변경 시 처음으로
+    // 되돌아가던 버그의 원인이 바로 이 경쟁 조건이었음).
+    playToken++;
+    var myToken = playToken;
+    btn.classList.add("playing");
+    btn.querySelector(".tts-label").textContent = "정지";
+    btn.querySelector(".tts-icon").textContent = "⏹";
+
+    ensureVoice(function() {
+      if (myToken !== playToken) return; // 그 사이 다른 세션으로 바뀌었으면 중단
+      var sentences = currentSentences;
+      for (var idx = fromIndex; idx < sentences.length; idx++) {
+        (function(idx) {
+          var utter = new SpeechSynthesisUtterance(sentences[idx]);
+          utter.lang = "ko-KR";
+          utter.rate = getEffectiveRate(rate);
+          utter.pitch = 1;
+          // 매 발화 생성 시점의 최신(가능한 가장 고품질) 음성을 사용
+          if (bestVoice) utter.voice = bestVoice;
+          // onstart가 정확하지만, 모바일 브라우저(특히 iOS)는 onstart가 아예 발동하지 않는
+          // 경우가 있어 onend에서도 다음 문장 번호로 넘겨서 이중으로 위치를 추적함
+          utter.onstart = function() {
+            if (myToken !== playToken) return;
+            currentIndex = idx;
+          };
+          if (idx === sentences.length - 1) {
+            utter.onend = function() {
+              if (myToken !== playToken) return;
+              resetBtn(btn); currentId = null; currentBtn = null; currentIndex = 0;
+            };
+            utter.onerror = function() {
+              if (myToken !== playToken) return;
+              resetBtn(btn); currentId = null; currentBtn = null; currentIndex = 0;
+            };
+          } else {
+            utter.onend = function() {
+              if (myToken !== playToken) return;
+              currentIndex = idx + 1;
+            };
+          }
+          window.speechSynthesis.speak(utter);
+        })(idx);
+      }
+    });
+  }
+
+  function speak(articleId, btn, rate) {
+    var text = getArticleText(articleId);
+    if (!text) return;
+    currentSentences = splitIntoSentences(text);
+    currentIndex = 0;
+    speakFrom(articleId, btn, rate, 0);
+  }
+
+  window.toggleTTS = function(articleId, btn) {
+    if (!('speechSynthesis' in window)) {
+      alert('이 브라우저에서는 음성 낭독 기능을 지원하지 않습니다.');
+      return;
+    }
+    if (currentId === articleId) {
+      playToken++; // 이 세션은 완전히 종료 - 이후 도착하는 콜백은 전부 무시됨
+      window.speechSynthesis.cancel();
+      resetBtn(currentBtn);
+      currentId = null; currentBtn = null; currentIndex = 0;
+      return;
+    }
+    playToken++;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.resume(); // 일부 안드로이드 크롬은 idle 후 resume 없이는 speak가 씹히는 버그가 있음
+    resetBtn(currentBtn);
+    speak(articleId, btn, currentRate);
+  };
+
+  window.onRateChange = function(sel) {
+    currentRate = parseFloat(sel.value);
+    // 모든 배속 선택창을 동일한 값으로 맞춤
+    document.querySelectorAll('.tts-rate').forEach(function(s) { s.value = sel.value; });
+    // 재생 중이면 처음으로 되돌아가지 않고, 지금 읽던 문장부터 새 배속으로 이어서 재생
+    if (currentId && currentBtn) {
+      // cancel() 직후 곧바로 speak()를 다시 호출하면 브라우저(특히 크롬 계열)가
+      // 취소 처리를 채 끝내기 전에 새 발화를 받아 내부 상태가 꼬여 처음 문장부터
+      // 다시 읽어버리는 경우가 있었음. 다음 문장부터 이어 읽을 값들을 미리 지역
+      // 변수에 고정해 두고, cancel()이 완전히 정리될 시간을 살짝 준 뒤 재생한다.
+      var resumeId = currentId, resumeBtn = currentBtn, resumeIndex = currentIndex, resumeRate = currentRate;
+      window.speechSynthesis.cancel();
+      setTimeout(function() {
+        speakFrom(resumeId, resumeBtn, resumeRate, resumeIndex);
+      }, 60);
+    }
+  };
+
+  window.addEventListener('beforeunload', function() {
+    window.speechSynthesis.cancel();
+  });
+})();
+</script>
+
+<div class="read-progress" id="readProgress"></div>
+
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxClose" aria-label="닫기">&times;</button>
+  <img id="lightboxImg" src="" alt="사진 확대">
+</div>
+
+<div class="float-controls">
+  <button class="float-btn top-btn" id="topBtn" onclick="scrollToTop()" aria-label="맨 위로">&#8593;</button>
+  <button class="float-btn" id="shareBtn" onclick="sharePage()" aria-label="공유하기" style="background:#FEE500; color:#3C1E1E; font-size:19px;">&#128172;</button>
+  <button class="float-btn" id="darkBtn" onclick="toggleDarkMode()" aria-label="다크모드 전환">&#127769;</button>
+  <div class="font-controls">
+    <button class="float-btn" onclick="changeFontSize(1)" aria-label="글자 크게">A+</button>
+    <button class="float-btn" onclick="changeFontSize(-1)" aria-label="글자 작게">A-</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var wrap = document.querySelector('.email-wrap');
+  var indexTabs = document.querySelector('.index-tabs');
+  var sizes = ['font-sm', '', 'font-lg'];
+  var sizeIdx = 1;
+
+  function applyFontSize() {
+    wrap.classList.remove('font-sm', 'font-lg');
+    if (sizes[sizeIdx]) wrap.classList.add(sizes[sizeIdx]);
+    if (indexTabs) {
+      indexTabs.classList.remove('font-sm', 'font-lg');
+      if (sizes[sizeIdx]) indexTabs.classList.add(sizes[sizeIdx]);
+    }
+    localStorage.setItem('pw176-fontsize', sizeIdx);
+  }
+  window.changeFontSize = function(dir) {
+    sizeIdx = Math.min(2, Math.max(0, sizeIdx + dir));
+    applyFontSize();
+  };
+  var savedSize = localStorage.getItem('pw176-fontsize');
+  if (savedSize !== null) { sizeIdx = parseInt(savedSize, 10); applyFontSize(); }
+
+  function applyDark(on) {
+    document.body.classList.toggle('dark-mode', on);
+    document.getElementById('darkBtn').innerHTML = on ? '&#9728;' : '&#127769;';
+    localStorage.setItem('pw176-dark', on ? '1' : '0');
+  }
+  window.toggleDarkMode = function() {
+    applyDark(!document.body.classList.contains('dark-mode'));
+  };
+  if (localStorage.getItem('pw176-dark') === '1') applyDark(true);
+
+  window.scrollToTop = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('topBtn');
+    if (window.scrollY > 400) btn.classList.add('show');
+    else btn.classList.remove('show');
+  });
+
+  window.sharePage = function() {
+    var shareData = {
+      title: '평화세상 · 통권 176호',
+      text: '사단법인 참된평화를만드는사람들 소식지 176호입니다.',
+      url: 'https://ksk0203-oss.github.io/peacenews176/'
+    };
+    if (navigator.share) {
+      navigator.share(shareData).catch(function() {});
+    } else {
+      navigator.clipboard.writeText(shareData.url).then(function() {
+        alert('링크가 복사되었습니다. 카카오톡 등에 붙여넣기 해주세요!');
+      }).catch(function() {
+        prompt('아래 링크를 복사해서 공유해주세요:', shareData.url);
+      });
+    }
+  };
+})();
+</script>
+
+<script>
+(function() {
+  // 읽기 진행률 바
+  var bar = document.getElementById('readProgress');
+  function updateProgress() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress);
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  // 사진 클릭 확대 라이트박스
+  var overlay = document.getElementById('lightboxOverlay');
+  var lbImg = document.getElementById('lightboxImg');
+  var lbClose = document.getElementById('lightboxClose');
+
+  function openLightbox(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '사진 확대';
+    overlay.classList.add('show');
+  }
+  function closeLightbox() {
+    overlay.classList.remove('show');
+    lbImg.src = '';
+  }
+  document.querySelectorAll('.photo-grid img, .photo-single img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      openLightbox(img.src, img.alt);
+    });
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // 사진이 화면에 보이면 살짝 떠오르며 나타나는 애니메이션
+  var photoImgs = document.querySelectorAll('.photo-grid img, .photo-single img');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var img = entry.target;
+          var siblings = Array.prototype.slice.call(img.parentElement.children);
+          var idx = siblings.indexOf(img);
+          setTimeout(function() { img.classList.add('in-view'); }, idx * 120);
+          observer.unobserve(img);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    photoImgs.forEach(function(img) { observer.observe(img); });
+  } else {
+    // 구형 브라우저는 애니메이션 없이 바로 표시
+    photoImgs.forEach(function(img) { img.classList.add('in-view'); });
+  }
+
+  // 기사 번호(원)와 제목이 스크롤로 보이면 순서대로 떠오르며 나타남
+  var titleTargets = [];
+  document.querySelectorAll('.article-head').forEach(function(head) {
+    var num = head.querySelector('.article-num');
+    var title = head.querySelector('.article-title');
+    if (num) titleTargets.push(num);
+    if (title) titleTargets.push(title);
+  });
+  if ('IntersectionObserver' in window && titleTargets.length) {
+    var titleObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = el.classList.contains('article-title') ? 120 : 0;
+          setTimeout(function() { el.classList.add('in-view'); }, delay);
+          titleObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '0px 0px -60px 0px' });
+    titleTargets.forEach(function(el) { titleObserver.observe(el); });
+  } else {
+    titleTargets.forEach(function(el) { el.classList.add('in-view'); });
+  }
+
+  // 히어로 로고: 등장 애니메이션이 끝나면 애니메이션 소유권을 내려놓아서
+  // 이후 마우스 호버 확대 효과가 정상 작동하도록 함
+  var heroLogo = document.querySelector('.hero-title img.hero-animate');
+  if (heroLogo) {
+    heroLogo.addEventListener('animationend', function() {
+      heroLogo.classList.remove('hero-animate');
+    });
+  }
+})();
+</script>
+
+<script>
+(function() {
+  var SUPABASE_URL = "https://nutoxezmxupvjmnrxffd.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_3tqe8xHfESAvk1goovkqYg_GaB_X7ou";
+
+  var form = document.getElementById('opinion-form');
+  var statusEl = document.getElementById('opinion-status');
+  var listEl = document.getElementById('opinion-list');
+  if (!form) return;
+
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function loadOpinions() {
+    fetch(SUPABASE_URL + '/rest/v1/opinions?select=name,content,created_at&order=created_at.desc', {
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: 'Bearer ' + SUPABASE_KEY
+      }
+    })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        listEl.innerHTML = '';
+        if (!data || data.length === 0) {
+          listEl.innerHTML = '<p class="opinion-empty">아직 등록된 의견이 없습니다. 첫 의견을 남겨보세요.</p>';
+          return;
+        }
+        data.forEach(function(item) {
+          var date = new Date(item.created_at).toLocaleDateString('ko-KR');
+          var div = document.createElement('div');
+          div.className = 'opinion-item';
+          div.innerHTML =
+            '<p class="opinion-item-content">' + escapeHtml(item.content) + '</p>' +
+            '<p class="opinion-item-meta">' + (item.name ? escapeHtml(item.name) : '익명') + ' · ' + date + '</p>';
+          listEl.appendChild(div);
+        });
+      })
+      .catch(function(err) { console.error('의견을 불러오지 못했습니다:', err); });
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('opinion-name').value.trim();
+    var content = document.getElementById('opinion-content').value.trim();
+    if (!content) return;
+
+    statusEl.textContent = '제출 중입니다...';
+
+    fetch(SUPABASE_URL + '/rest/v1/opinions', {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: 'Bearer ' + SUPABASE_KEY,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal'
+      },
+      body: JSON.stringify({ name: name || null, content: content })
+    })
+      .then(function(res) {
+        if (!res.ok) throw new Error('전송 실패');
+        statusEl.textContent = '의견이 등록되었습니다. 감사합니다!';
+        form.reset();
+        loadOpinions();
+      })
+      .catch(function(err) {
+        statusEl.textContent = '오류가 발생했습니다. 다시 시도해주세요.';
+        console.error(err);
+      });
+  });
+
+  loadOpinions();
+})();
+</script>
+
+</body>
+</html>
