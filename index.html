@@ -20,9 +20,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 
 :root {
-  --forest-900: #5b1e2d;
-  --forest-700: #7a3b49;
-  --forest-line: #8a4a59;
+  --forest-900: #450f1c;
+  --forest-700: #5c2230;
+  --forest-line: #6e3040;
   --sage: #cdb0b6;
   --sage-light: #f4ebec;
   --terracotta: #6b7a3a;
@@ -66,7 +66,7 @@ body {
 
 .email-wrap {
   max-width: 680px; margin: 0 auto 48px; background: var(--white);
-  box-shadow: 0 4px 28px rgba(60,20,30,0.08);
+  box-shadow: 0 4px 28px rgba(48,10,20,0.08);
   overflow: hidden;
 }
 .email-wrap.font-sm { zoom: 0.92; }
@@ -434,13 +434,13 @@ body {
   padding: 16px 9px;
   min-height: 96px;
   border-radius: 0 10px 10px 0;
-  box-shadow: 2px 3px 8px rgba(60,20,30,0.18);
+  box-shadow: 2px 3px 8px rgba(48,10,20,0.18);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.15s, box-shadow 0.15s;
 }
-.index-tab:hover { transform: translateX(4px); box-shadow: 3px 4px 10px rgba(60,20,30,0.26); }
+.index-tab:hover { transform: translateX(4px); box-shadow: 3px 4px 10px rgba(48,10,20,0.26); }
 .index-tab .roman {
   font-family: 'Noto Sans KR';
   font-size: 11px;
@@ -454,7 +454,7 @@ body {
 .index-tab--02 { background: var(--forest-700); }
 .index-tab--03 { background: var(--forest-900); }
 .index-tab--04 { background: #7d8a4c; }
-.index-tab--05 { background: #9c5b6b; }
+.index-tab--05 { background: #86435a; }
 .index-tab--06 { background: #8b6a3e; }
 .index-tab--07 { background: var(--forest-700); }
 @media (min-width: 1041px) {
@@ -476,7 +476,7 @@ body {
     -webkit-overflow-scrolling: touch;
     gap: 8px;
     background: var(--white);
-    box-shadow: 0 2px 10px rgba(60,20,30,0.15);
+    box-shadow: 0 2px 10px rgba(48,10,20,0.15);
     padding: 6px 10px;
   }
   .index-tab {
@@ -541,7 +541,7 @@ body {
 .photo-grid img, .photo-single img { cursor: zoom-in; }
 .lightbox-overlay {
   position: fixed; inset: 0; z-index: 950;
-  background: rgba(60,20,30,0.9);
+  background: rgba(48,10,20,0.9);
   display: none; align-items: center; justify-content: center;
   padding: 24px;
 }
@@ -727,7 +727,7 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
 
 /* 사역 보고 월 구분 강조 */
 .section-major.month-head { margin: 46px 0 6px; padding: 18px 28px; gap: 18px; background: var(--sage-light); border-top: 3px solid var(--terracotta); border-bottom: 1px solid var(--border-light); }
-.month-badge { flex-shrink: 0; width: 76px; height: 76px; border-radius: 10px; background: var(--forest-900); color: #fff; display: flex; align-items: baseline; justify-content: center; padding-top: 14px; box-shadow: 0 4px 14px rgba(60,20,30,0.18); }
+.month-badge { flex-shrink: 0; width: 76px; height: 76px; border-radius: 10px; background: var(--forest-900); color: #fff; display: flex; align-items: baseline; justify-content: center; padding-top: 14px; box-shadow: 0 4px 14px rgba(48,10,20,0.18); }
 .month-badge strong { font-family: 'Noto Serif KR'; font-size: 38px; font-weight: 700; line-height: 1; }
 .month-badge span { font-family: 'Noto Serif KR'; font-size: 17px; font-weight: 600; margin-left: 2px; color: #dde3a8; }
 .month-head .section-title { font-size: 21px; line-height: 1.4; }
