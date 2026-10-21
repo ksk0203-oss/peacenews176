@@ -723,6 +723,23 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
   .event-info div { padding: 22px; }
   .event-info div + div { border-left: none; border-top: 1px solid rgba(237,233,223,.2); }
 }
+
+/* 사역 보고 월 구분 강조 */
+.section-major.month-head { margin: 46px 0 6px; padding: 18px 28px; gap: 18px; background: var(--sage-light); border-top: 3px solid var(--terracotta); border-bottom: 1px solid var(--border-light); }
+.month-badge { flex-shrink: 0; width: 76px; height: 76px; border-radius: 10px; background: var(--forest-900); color: #fff; display: flex; align-items: baseline; justify-content: center; padding-top: 14px; box-shadow: 0 4px 14px rgba(15,39,33,0.18); }
+.month-badge strong { font-family: 'Noto Serif KR'; font-size: 38px; font-weight: 700; line-height: 1; }
+.month-badge span { font-family: 'Noto Serif KR'; font-size: 17px; font-weight: 600; margin-left: 2px; color: #E2C792; }
+.month-head .section-title { font-size: 21px; line-height: 1.4; }
+.month-head .m-en { display: block; margin-bottom: 4px; font-family: 'Noto Sans KR'; font-size: 11.5px; font-weight: 700; letter-spacing: 3px; color: var(--terracotta); }
+.month-head .m-sub { margin-top: 5px; }
+body.dark-mode .month-badge { background: var(--terracotta); }
+@media (max-width: 640px) {
+  .section-major.month-head { padding: 16px; gap: 14px; }
+  .month-badge { width: 64px; height: 64px; padding-top: 11px; }
+  .month-badge strong { font-size: 31px; }
+  .month-badge span { font-size: 15px; }
+  .month-head .section-title { font-size: 18px; }
+}
 </style>
 
 </head>
@@ -878,9 +895,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
       <div><strong>6<em>박</em>7<em>일</em></strong><span>제4회 평화기행<br>9.27 – 10.3</span></div>
     </div>
 
-  <div class="section-major" id="m01">
-    <div class="section-num">1</div>
-    <div class="section-title">말씀으로 여는 새해<br><small class="m-sub">JANUARY · 사순절 묵상집 발간 · 말씀의 잔치 · 네팔 지원</small></div>
+  <div class="section-major month-head" id="m01">
+    <div class="month-badge"><strong>1</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">JANUARY · 2026</span>말씀으로 여는 새해<br><small class="m-sub">사순절 묵상집 발간 · 말씀의 잔치 · 네팔 지원</small></div>
   </div>
   <div class="entry">
         <span class="kicker">발간 사업</span>
@@ -916,9 +933,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
         </dl>
   </div>
 
-  <div class="section-major" id="m02">
-    <div class="section-num">2</div>
-    <div class="section-title">돌아보고, 새로 시작하다<br><small class="m-sub">FEBRUARY · 제19차 정기총회 · 평화교실 「희년신앙」</small></div>
+  <div class="section-major month-head" id="m02">
+    <div class="month-badge"><strong>2</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">FEBRUARY · 2026</span>돌아보고, 새로 시작하다<br><small class="m-sub">제19차 정기총회 · 평화교실 「희년신앙」</small></div>
   </div>
   <div class="entry">
         <span class="kicker">총회</span>
@@ -962,9 +979,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
         <p>2월 18일 재의 수요일과 함께 사순절이 시작되었습니다. 1월에 펴낸 묵상집을 후원자와 교회에 발송했습니다. 네팔에서는 현지에서 필요한 물품을 구매해 보내는 일을 도왔습니다.</p>
   </div>
 
-  <div class="section-major" id="m03">
-    <div class="section-num">3</div>
-    <div class="section-title">고난의 길을 함께 걷다<br><small class="m-sub">MARCH · 사순절 · 소식지 발송 · 법인 보고</small></div>
+  <div class="section-major month-head" id="m03">
+    <div class="month-badge"><strong>3</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">MARCH · 2026</span>고난의 길을 함께 걷다<br><small class="m-sub">사순절 · 소식지 발송 · 법인 보고</small></div>
   </div>
   <div class="entry">
         <span class="kicker">말씀 사역</span>
@@ -985,9 +1002,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
         <p>통일부 소속 사단법인으로서 2025년 연도말 보고서와 운영상황 요약표, 법인 운영 현황 보고 공문을 정리해 제출했습니다. 3월에는 네팔 지원금도 전달했습니다.</p>
   </div>
 
-  <div class="section-major" id="m04">
-    <div class="section-num">4</div>
-    <div class="section-title">부활의 아침, 이어지는 만남<br><small class="m-sub">APRIL · 평화교실 · 봄 나들이 · 반가운 손님들</small></div>
+  <div class="section-major month-head" id="m04">
+    <div class="month-badge"><strong>4</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">APRIL · 2026</span>부활의 아침, 이어지는 만남<br><small class="m-sub">평화교실 · 봄 나들이 · 반가운 손님들</small></div>
   </div>
   <div class="entry">
         <span class="kicker">평화교실</span>
@@ -1028,9 +1045,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
         <p>2025년 연간 기부금 모금액·활용실적 명세서를 4월 29일 접수하고 홈페이지에 게시했습니다. 법인 홈페이지를 블로그 형태로 전환하는 방안도 협의했습니다. 네팔 지원금은 4월 29~30일에 선교사 이체와 물품 구매 대행으로 전달했고, 직원 연구·교육에도 참여했습니다.</p>
   </div>
 
-  <div class="section-major" id="m05">
-    <div class="section-num">5</div>
-    <div class="section-title">손님을 맞고, 길을 준비하다<br><small class="m-sub">MAY · 소식지 174호 · 말씀의 잔치 · 평화기행단 모집</small></div>
+  <div class="section-major month-head" id="m05">
+    <div class="month-badge"><strong>5</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">MAY · 2026</span>손님을 맞고, 길을 준비하다<br><small class="m-sub">소식지 174호 · 말씀의 잔치 · 평화기행단 모집</small></div>
   </div>
   <div class="entry">
         <span class="kicker">소식지</span>
@@ -1059,9 +1076,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
         <p>일 년에 한 번 카자흐스탄 평화기행을 통해 한국교회가 잊고 있던 고려인의 이야기를 이어 가려 합니다. 5월부터 기행단을 모집했고, 최종적으로 9월 27일 출발로 확정되었습니다.</p>
   </div>
 
-  <div class="section-major" id="m06">
-    <div class="section-num">6</div>
-    <div class="section-title">감사로 맞은 새로운 출발<br><small class="m-sub">JUNE · 평화교실 · 자문위원 위촉 · 감사의 날 · AI 강의</small></div>
+  <div class="section-major month-head" id="m06">
+    <div class="month-badge"><strong>6</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">JUNE · 2026</span>감사로 맞은 새로운 출발<br><small class="m-sub">평화교실 · 자문위원 위촉 · 감사의 날 · AI 강의</small></div>
   </div>
   <div class="entry">
         <span class="kicker">평화교실</span>
@@ -1110,9 +1127,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
         <ul class="notes"><li><b>그 밖에</b>6월 30일 네팔 지원금을 전달했고, 연간 기부금 모금·활용실적 명세서를 블로그에도 게시했습니다.</li></ul>
   </div>
 
-  <div class="section-major" id="m07">
-    <div class="section-num">7</div>
-    <div class="section-title">온라인으로 더 가까이<br><small class="m-sub">JULY · 소식지 175호 온라인 발행 · 정례 모임</small></div>
+  <div class="section-major month-head" id="m07">
+    <div class="month-badge"><strong>7</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">JULY · 2026</span>온라인으로 더 가까이<br><small class="m-sub">소식지 175호 온라인 발행 · 정례 모임</small></div>
   </div>
   <div class="entry">
         <span class="kicker">소식지</span>
@@ -1135,9 +1152,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
         <p>7월 22일 평화기행단의 항공권 10매를 구매했고, 9월 평화교실 홍보물을 준비했습니다. 신규 후원자 주소록을 정리해 소식지 발송 명단에 반영했습니다.</p>
   </div>
 
-  <div class="section-major" id="m08">
-    <div class="section-num">8</div>
-    <div class="section-title">먼 길을 준비하는 여름<br><small class="m-sub">AUGUST · 카자흐스탄 평화기행 준비 · 온라인 소통 확대</small></div>
+  <div class="section-major month-head" id="m08">
+    <div class="month-badge"><strong>8</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">AUGUST · 2026</span>먼 길을 준비하는 여름<br><small class="m-sub">카자흐스탄 평화기행 준비 · 온라인 소통 확대</small></div>
   </div>
   <div class="entry">
         <span class="kicker">평화기행 준비</span>
@@ -1158,9 +1175,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
         <p>재단 홈페이지 템플릿을 선정해 새 홈페이지 제작을 준비했고, 8월 12일 후원자 195명에게 소식지 안내 문자를 보냈습니다. 말씀의 잔치는 웹자료로 제작해 공유했습니다.</p>
   </div>
 
-  <div class="section-major" id="m09">
-    <div class="section-num">9</div>
-    <div class="section-title">알마티로, 기억을 찾아서<br><small class="m-sub">SEPTEMBER · 제4회 카자흐스탄 평화기행 출발 · 네팔·카자흐스탄 지원</small></div>
+  <div class="section-major month-head" id="m09">
+    <div class="month-badge"><strong>9</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">SEPTEMBER · 2026</span>알마티로, 기억을 찾아서<br><small class="m-sub">제4회 카자흐스탄 평화기행 출발 · 네팔·카자흐스탄 지원</small></div>
   </div>
   <div class="entry">
         <span class="kicker">해외 협력</span>
@@ -1194,9 +1211,9 @@ body.dark-mode .donate-link { color: var(--text-black); border-color: var(--sage
       <p class="photo-caption">우슈토베 방문(9월 29일)</p>
   </div>
 
-  <div class="section-major" id="m10">
-    <div class="section-num">10</div>
-    <div class="section-title">평화기행을 마치고<br><small class="m-sub">OCTOBER · 제4회 카자흐스탄 평화기행 마무리 (10월 3일까지)</small></div>
+  <div class="section-major month-head" id="m10">
+    <div class="month-badge"><strong>10</strong><span>월</span></div>
+    <div class="section-title"><span class="m-en">OCTOBER · 2026</span>평화기행을 마치고<br><small class="m-sub">제4회 카자흐스탄 평화기행 마무리 (10월 3일까지)</small></div>
   </div>
   <div class="entry">
         <span class="kicker">평화기행</span>
