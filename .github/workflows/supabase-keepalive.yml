@@ -1,0 +1,26 @@
+# Supabase 무료 프로젝트 자동 정지 방지용:
+# 이틀마다 의견(opinions) 목록을 한 건 조회해 데이터베이스 활동을 만든다.
+# 주소와 키는 index.html에 이미 있는 값을 실행 시점에 읽어 쓴다(별도로 복사해 두지 않음).
+name: supabase-keepalive
+
+on:
+  schedule:
+    - cron: "17 3 */2 * *"   # 이틀마다 03:17 UTC (한국 12:17)
+  workflow_dispatch:         # 수동 실행 가능
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: opinions 테이블 조회
+        run: |
+          url=$(grep -m1 'var SUPABASE_URL' index.html | sed -E 's/.*"([^"]+)".*/\1/')
+          key=$(grep -m1 'var SUPABASE_KEY' index.html | sed -E 's/.*"([^"]+)".*/\1/')
+          test -n "$url" && test -n "$key" || { echo "index.html에서 Supabase 설정을 찾지 못했습니다"; exit 1; }
+          code=$(curl -sS -o /tmp/out.json -w "%{http_code}" \
+            "$url/rest/v1/opinions?select=created_at&limit=1" \
+            -H "apikey: $key" -H "Authorization: Bearer $key")
+          echo "HTTP $code"
+          cat /tmp/out.json
+          test "$code" = "200"
