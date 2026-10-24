@@ -814,9 +814,9 @@ body.dark-mode .figs strong, body.dark-mode .figs strong em { color: #F2A06B; }
 .pi-list li + li { border-top: 1px solid #BFC995; }
 .pi-item { display: flex; align-items: center; gap: 13px; padding: 10px 2px; border-radius: 6px; text-decoration: none; color: inherit; transition: background 0.2s; }
 .pi-item:hover { background: rgba(63,74,34,0.09); }
-.pi-no { flex-shrink: 0; width: 46px; height: 46px; border-radius: 9px; background: linear-gradient(135deg, #627436, #2F3A18); color: #fff; display: flex; align-items: baseline; justify-content: center; padding-top: 11px; }
-.pi-no b { font-family: 'Noto Serif KR'; font-size: 18.5px; font-weight: 700; line-height: 1; }
-.pi-no i { font-style: normal; font-size: 10px; margin-left: 1px; color: #DCE2C0; }
+.pi-no { flex-shrink: 0; width: 54px; height: 54px; border-radius: 12px; background: linear-gradient(135deg, #627436, #2F3A18); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22), 0 2px 5px rgba(47,58,24,0.25); }
+.pi-no b { font-family: 'Noto Serif KR'; font-size: 17px; font-weight: 700; line-height: 1; letter-spacing: -0.3px; }
+.pi-no i { font-style: normal; font-size: 10.5px; line-height: 1; letter-spacing: 1px; color: #DCE2C0; }
 .pi-text { flex: 1; min-width: 0; }
 .pi-text strong { display: block; font-family: 'Noto Serif KR'; font-size: 15.5px; font-weight: 700; color: var(--forest-900); word-break: keep-all; }
 .pi-text small { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.5; color: var(--text-gray); word-break: keep-all; }
@@ -827,7 +827,7 @@ body.dark-mode .pi-list li + li { border-top-color: var(--border-light); }
 body.dark-mode .pi-heading, body.dark-mode .pi-text strong { color: #ECEEE0; }
 body.dark-mode .pi-kicker, body.dark-mode .pi-arrow { color: #F2A06B; }
 body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
-@media (max-width: 640px) { .past-issues { margin-left: 16px; margin-right: 16px; padding: 13px 14px 5px; } .pi-no { width: 42px; height: 42px; padding-top: 10px; } .pi-no b { font-size: 17px; } .pi-text strong { font-size: 15px; } .pi-text small { font-size: 12px; } }
+@media (max-width: 640px) { .past-issues { margin-left: 16px; margin-right: 16px; padding: 13px 14px 5px; } .pi-no { width: 48px; height: 48px; gap: 2px; } .pi-no b { font-size: 15.5px; } .pi-no i { font-size: 10px; } .pi-text strong { font-size: 15px; } .pi-text small { font-size: 12px; } }
 @media print { .pi-item:hover { background: none; } }
 </style>
 
