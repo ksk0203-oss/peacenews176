@@ -803,6 +803,18 @@ body.dark-mode .section-label, body.dark-mode .index-label, body.dark-mode .inde
 body.dark-mode .opinion-submit { color: #fff; }
 body.dark-mode .article-subtitle { color: #C9D1A6; }
 body.dark-mode .figs strong, body.dark-mode .figs strong em { color: #F2A06B; }
+/* 지난 호(175호) 바로가기 */
+.past-issue { margin: 26px 28px 0; }
+.past-issue a { display: flex; align-items: center; gap: 14px; padding: 16px 20px; text-decoration: none; background: linear-gradient(90deg, #EEF0E0 0%, #FFFFFF 100%); border: 1px solid var(--border-light); border-left: 4px solid var(--terracotta); border-radius: 4px; transition: box-shadow 0.2s, transform 0.2s; }
+.past-issue a:hover { box-shadow: 0 6px 18px rgba(63,74,34,0.14); transform: translateY(-1px); }
+.pi-label { flex-shrink: 0; font-size: 12px; font-weight: 700; letter-spacing: 2px; color: var(--terracotta); }
+.pi-title { flex: 1; font-family: 'Noto Serif KR'; font-size: 16.5px; font-weight: 700; color: var(--forest-900); word-break: keep-all; }
+.pi-arrow { flex-shrink: 0; color: var(--terracotta); font-size: 18px; }
+body.dark-mode .past-issue a { background: var(--sage-light); }
+body.dark-mode .pi-title { color: #ECEEE0; }
+body.dark-mode .pi-label, body.dark-mode .pi-arrow { color: #F2A06B; }
+@media (max-width: 640px) { .past-issue { margin-left: 16px; margin-right: 16px; } .past-issue a { padding: 14px 16px; gap: 10px; } .pi-title { font-size: 15px; } }
+@media print { .past-issue a { box-shadow: none; } }
 </style>
 
 </head>
@@ -1432,6 +1444,14 @@ body.dark-mode .figs strong, body.dark-mode .figs strong em { color: #F2A06B; }
 
 
   <div class="ornament-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+
+  <div class="past-issue">
+    <a href="https://ksk0203-oss.github.io/peacenews175/" target="_blank" rel="noopener">
+      <span class="pi-label">지난 호</span>
+      <span class="pi-title">『평화세상』 통권 175호 보기</span>
+      <span class="pi-arrow">→</span>
+    </a>
+  </div>
 
   <div class="article" id="article-06">
     <div class="article-head">
