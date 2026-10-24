@@ -220,6 +220,7 @@ body {
 .body-copy p.body-text, p.body-text {
   font-size: 17.5px; line-height: 1.95; color: var(--text-black); text-align: left;
   padding: 0 28px; margin-top: 20px;
+  word-break: keep-all; overflow-wrap: break-word;
 }
 .body-copy p.body-text:first-child { margin-top: 0; }
 
@@ -499,11 +500,16 @@ body {
 }
 
 @media (max-width: 640px) {
+  .float-btn { width: 40px; height: 40px; }
+  .float-controls .ctrl-toggle { display: flex; }
+  .float-controls:not(.open) #shareBtn,
+  .float-controls:not(.open) #darkBtn,
+  .float-controls:not(.open) .font-controls { display: none; }
   .utility-bar, .footer-box, .bottom-bar { padding-left: 16px; padding-right: 16px; }
   .hero { padding: 44px 16px 36px; }
   .article, .body-copy, .index-box, .timeline-section { padding-left: 16px; padding-right: 16px; }
   .section-major, .sub-heading { padding-left: 16px; padding-right: 16px; }
-  p.body-text { padding-left: 16px; padding-right: 16px; }
+  p.body-text { padding-left: 0; padding-right: 0; } /* .body-copy가 이미 16px 여백을 가짐 */
   .pullquote, .note-box { margin-left: 16px; margin-right: 16px; }
   .ornament-divider { padding-left: 16px; padding-right: 16px; }
   .hero-title img { max-width: 300px; }
@@ -576,6 +582,7 @@ body {
 }
 .font-controls .float-btn { box-shadow: none; border-radius: 0; }
 .font-controls .float-btn + .float-btn { border-top: 1px solid rgba(255,255,255,0.2); }
+.ctrl-toggle { display: none; font-size: 13px; }
 .top-btn {
   opacity: 0; visibility: hidden; transform: translateY(8px);
   transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
@@ -741,6 +748,61 @@ body.dark-mode .month-badge { background: var(--terracotta); }
   .month-badge span { font-size: 15px; }
   .month-head .section-title { font-size: 18px; }
 }
+
+/* ── 176호: 같은 올리브 색조 안의 그라데이션(깊이감) ── */
+body { background: linear-gradient(180deg, #FBFAF3 0%, #EEF0E2 100%) fixed; }
+.utility-bar { background: transparent; }
+.email-wrap { box-shadow: 0 12px 44px rgba(63,74,34,0.16); }
+.hero { background: linear-gradient(155deg, #2E3818 0%, #46552A 48%, #6A7B3E 100%); }
+.hero::before { background: radial-gradient(circle at 14% 10%, rgba(240,200,150,0.14) 0, transparent 42%), radial-gradient(circle at 88% 86%, rgba(255,255,255,0.07) 0, transparent 46%); }
+.index-num, .article-num, .tl-badge, .month-badge { background: linear-gradient(135deg, #76884A, #3F4A22); color: #fff; }
+.index-num.alt, .section-num { background: linear-gradient(135deg, #DCE2C0, #C3CBA0); color: #3F4A22; }
+.section-major.month-head { background: linear-gradient(90deg, #EEF0E0 0%, #FFFFFF 100%); border-top: 3px solid transparent; border-image: linear-gradient(90deg, #E0763A, #C4561F 55%, rgba(196,86,31,0)) 1; }
+.pullquote { background: linear-gradient(135deg, #FFF6EE 0%, #FBEADF 100%); }
+.ask { background: linear-gradient(135deg, #7A8C4A 0%, #5B6A32 50%, #3A4421 100%); border-radius: 6px; }
+.event { background: linear-gradient(160deg, #4E5E2C 0%, #2A3316 100%); }
+.ornament-divider .diamond { background: linear-gradient(135deg, #E0763A, #C4561F); }
+.ornament-divider .line { background: linear-gradient(90deg, transparent, #D3D6B8); }
+.footer-box { background: linear-gradient(180deg, #EEF0E2, #E3E6D2); }
+.index-tab--01 { background: linear-gradient(160deg, #DA6A2E, #B44B18); }
+.index-tab--02 { background: linear-gradient(160deg, #6A7B3E, #4B5A28); }
+.index-tab--03 { background: linear-gradient(160deg, #4B5A28, #2E3818); }
+.index-tab--04 { background: linear-gradient(160deg, #E38C50, #C4691F); }
+.index-tab--05 { background: linear-gradient(160deg, #92A05A, #6F7F45); }
+.index-tab--06 { background: linear-gradient(160deg, #BC6A3F, #8F4326); }
+.index-tab--07 { background: linear-gradient(160deg, #6A7B3E, #46552A); }
+a[href*="hvap1004"][style*="background:#a8552b"] { background: linear-gradient(135deg, #D9692C, #A8461E) !important; box-shadow: 0 6px 16px rgba(168,70,30,0.38) !important; }
+/* 다크 모드에서는 기존 어두운 색을 그대로 사용 */
+body.dark-mode { background: var(--off-white); }
+body.dark-mode .email-wrap { box-shadow: 0 12px 44px rgba(0,0,0,0.5); }
+body.dark-mode .pullquote { background: var(--terracotta-light); }
+body.dark-mode .section-major.month-head { background: var(--sage-light); border-image: none; border-top: 3px solid var(--terracotta); }
+body.dark-mode .footer-box { background: var(--footer-gray); }
+body.dark-mode .index-num.alt, body.dark-mode .section-num { background: var(--sage); color: var(--forest-900); }
+body.dark-mode .ornament-divider .line { background: var(--border-light); }
+/* 다크 모드: 어두운 올리브색으로 고정돼 있던 제목·인용구 글자를 밝게(원래 공개본에도 있던 읽기 문제 수정) */
+body.dark-mode .index-title,
+body.dark-mode .article-title,
+body.dark-mode .drop-cap,
+body.dark-mode .pullquote p,
+body.dark-mode .section-title,
+body.dark-mode .timeline-title,
+body.dark-mode .news-date,
+body.dark-mode .corp-ad-title,
+body.dark-mode .corp-ad .ad-quote,
+body.dark-mode .sublist-head,
+body.dark-mode .acct-row span:last-child,
+body.dark-mode .qr-label,
+body.dark-mode .closing-verse,
+body.dark-mode .footer-mark,
+body.dark-mode .next li strong,
+body.dark-mode .tts-btn:not(.playing),
+body.dark-mode .tts-rate { color: #ECEEE0; }
+body.dark-mode [style*="color:var(--forest-900)"], body.dark-mode [style*="color: var(--forest-900)"] { color: #ECEEE0 !important; }
+body.dark-mode .section-label, body.dark-mode .index-label, body.dark-mode .index-arrow, body.dark-mode .m-en, body.dark-mode .entry .kicker { color: #F2A06B; }
+body.dark-mode .opinion-submit { color: #fff; }
+body.dark-mode .article-subtitle { color: #C9D1A6; }
+body.dark-mode .figs strong, body.dark-mode .figs strong em { color: #F2A06B; }
 </style>
 
 </head>
@@ -1707,6 +1769,7 @@ body.dark-mode .month-badge { background: var(--terracotta); }
     <button class="float-btn" onclick="changeFontSize(1)" aria-label="글자 크게">A+</button>
     <button class="float-btn" onclick="changeFontSize(-1)" aria-label="글자 작게">A-</button>
   </div>
+  <button class="float-btn ctrl-toggle" id="ctrlToggle" aria-label="공유·다크모드·글자 크기 열기" aria-expanded="false" onclick="var c=document.querySelector('.float-controls');var o=c.classList.toggle('open');this.textContent=o?'✕':'Aa';this.setAttribute('aria-expanded',o)">Aa</button>
 </div>
 
 <script>
