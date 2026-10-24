@@ -803,18 +803,28 @@ body.dark-mode .section-label, body.dark-mode .index-label, body.dark-mode .inde
 body.dark-mode .opinion-submit { color: #fff; }
 body.dark-mode .article-subtitle { color: #C9D1A6; }
 body.dark-mode .figs strong, body.dark-mode .figs strong em { color: #F2A06B; }
-/* 지난 호(175호) 바로가기 */
-.past-issue { margin: 26px 28px 0; }
-.past-issue a { display: flex; align-items: center; gap: 14px; padding: 16px 20px; text-decoration: none; background: linear-gradient(90deg, #EEF0E0 0%, #FFFFFF 100%); border: 1px solid var(--border-light); border-left: 4px solid var(--terracotta); border-radius: 4px; transition: box-shadow 0.2s, transform 0.2s; }
-.past-issue a:hover { box-shadow: 0 6px 18px rgba(63,74,34,0.14); transform: translateY(-1px); }
-.pi-label { flex-shrink: 0; font-size: 12px; font-weight: 700; letter-spacing: 2px; color: var(--terracotta); }
-.pi-title { flex: 1; font-family: 'Noto Serif KR'; font-size: 16.5px; font-weight: 700; color: var(--forest-900); word-break: keep-all; }
-.pi-arrow { flex-shrink: 0; color: var(--terracotta); font-size: 18px; }
-body.dark-mode .past-issue a { background: var(--sage-light); }
-body.dark-mode .pi-title { color: #ECEEE0; }
-body.dark-mode .pi-label, body.dark-mode .pi-arrow { color: #F2A06B; }
-@media (max-width: 640px) { .past-issue { margin-left: 16px; margin-right: 16px; } .past-issue a { padding: 14px 16px; gap: 10px; } .pi-title { font-size: 15px; } }
-@media print { .past-issue a { box-shadow: none; } }
+/* 지난 호 보기 란 */
+.past-issues { margin: 28px 28px 0; padding: 20px 22px 14px; background: linear-gradient(135deg, #F4F6EA 0%, #FFFFFF 100%); border: 1px solid var(--border-light); border-top: 3px solid var(--terracotta); border-radius: 4px; }
+.pi-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+.pi-kicker { font-size: 11.5px; font-weight: 700; letter-spacing: 3px; color: var(--terracotta); }
+.pi-heading { font-family: 'Noto Serif KR'; font-size: 19px; font-weight: 700; color: var(--forest-900); }
+.pi-list { list-style: none; }
+.pi-list li + li { border-top: 1px solid var(--border-light); }
+.pi-item { display: flex; align-items: center; gap: 14px; padding: 14px 4px; text-decoration: none; color: inherit; transition: background 0.2s; }
+.pi-item:hover { background: rgba(196,86,31,0.06); }
+.pi-no { flex-shrink: 0; width: 56px; height: 56px; border-radius: 10px; background: linear-gradient(135deg, #76884A, #3F4A22); color: #fff; display: flex; align-items: baseline; justify-content: center; padding-top: 13px; }
+.pi-no b { font-family: 'Noto Serif KR'; font-size: 22px; font-weight: 700; line-height: 1; }
+.pi-no i { font-style: normal; font-size: 12px; margin-left: 1px; color: #DCE2C0; }
+.pi-text { flex: 1; min-width: 0; }
+.pi-text strong { display: block; font-family: 'Noto Serif KR'; font-size: 16px; font-weight: 700; color: var(--forest-900); word-break: keep-all; }
+.pi-text small { display: block; margin-top: 3px; font-size: 13px; line-height: 1.6; color: var(--text-gray); word-break: keep-all; }
+.pi-arrow { flex-shrink: 0; color: var(--terracotta); font-size: 20px; transition: transform 0.2s; }
+.pi-item:hover .pi-arrow { transform: translateX(4px); }
+body.dark-mode .past-issues { background: var(--sage-light); }
+body.dark-mode .pi-heading, body.dark-mode .pi-text strong { color: #ECEEE0; }
+body.dark-mode .pi-kicker, body.dark-mode .pi-arrow { color: #F2A06B; }
+@media (max-width: 640px) { .past-issues { margin-left: 16px; margin-right: 16px; padding: 18px 16px 10px; } .pi-no { width: 48px; height: 48px; padding-top: 11px; } .pi-no b { font-size: 19px; } .pi-text strong { font-size: 15px; } .pi-text small { font-size: 12.5px; } }
+@media print { .pi-item:hover { background: none; } }
 </style>
 
 </head>
@@ -1445,12 +1455,17 @@ body.dark-mode .pi-label, body.dark-mode .pi-arrow { color: #F2A06B; }
 
   <div class="ornament-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
 
-  <div class="past-issue">
-    <a href="https://ksk0203-oss.github.io/peacenews175/" target="_blank" rel="noopener">
-      <span class="pi-label">지난 호</span>
-      <span class="pi-title">『평화세상』 통권 175호 보기</span>
-      <span class="pi-arrow">→</span>
-    </a>
+  <div class="past-issues" id="past-issues">
+    <div class="pi-head"><span class="pi-kicker">ARCHIVE</span><h3 class="pi-heading">지난 호 보기</h3></div>
+    <ul class="pi-list">
+      <li>
+        <a class="pi-item" href="https://ksk0203-oss.github.io/peacenews175/" target="_blank" rel="noopener">
+          <span class="pi-no"><b>175</b><i>호</i></span>
+          <span class="pi-text"><strong>『평화세상』 통권 175호 · 온라인 첫 발행</strong><small>2026년 7월 · 여는 글, 이사장의 편지, 평화교실 강의, 홍동근 목사 연보, 법인 소식, 후원자 명단</small></span>
+          <span class="pi-arrow">→</span>
+        </a>
+      </li>
+    </ul>
   </div>
 
   <div class="article" id="article-06">
