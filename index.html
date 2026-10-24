@@ -805,25 +805,29 @@ body.dark-mode .article-subtitle { color: #C9D1A6; }
 body.dark-mode .figs strong, body.dark-mode .figs strong em { color: #F2A06B; }
 /* 기사 제목도 단어 단위로 줄바꿈 */
 .article-title, .section-title, .pi-heading { word-break: keep-all; overflow-wrap: break-word; }
-/* 지난 호 보기 란 — 올리브 그라데이션 바탕 + 주황 포인트로 눈에 띄게 */
-.past-issues { margin: 28px 28px 0; padding: 20px 22px 14px; background: linear-gradient(135deg, #6A7B3E 0%, #46552A 55%, #2E3818 100%); border-top: 3px solid #E0763A; border-radius: 4px; box-shadow: 0 10px 26px rgba(46,56,24,0.30); }
-.pi-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
-.pi-kicker { font-size: 11.5px; font-weight: 700; letter-spacing: 3px; color: #F6C9A4; }
-.pi-heading { font-family: 'Noto Serif KR'; font-size: 20px; font-weight: 700; color: #fff; }
+/* 지난 호 보기 란 — 연한 올리브 바탕에 올리브 배지(절제된 강조) */
+.past-issues { margin: 26px 28px 0; padding: 14px 20px 6px; background: linear-gradient(135deg, #EEF1DC 0%, #F8F9EF 100%); border: 1px solid #D5DBB8; border-left: 4px solid var(--forest-line); border-radius: 4px; box-shadow: 0 3px 10px rgba(63,74,34,0.08); }
+.pi-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 2px; }
+.pi-kicker { font-size: 10.5px; font-weight: 700; letter-spacing: 3px; color: var(--terracotta); }
+.pi-heading { font-family: 'Noto Serif KR'; font-size: 17px; font-weight: 700; color: var(--forest-900); }
 .pi-list { list-style: none; }
-.pi-list li + li { border-top: 1px solid rgba(255,255,255,0.18); }
-.pi-item { display: flex; align-items: center; gap: 14px; padding: 14px 6px; border-radius: 6px; text-decoration: none; color: inherit; transition: background 0.2s; }
-.pi-item:hover { background: rgba(255,255,255,0.09); }
-.pi-no { flex-shrink: 0; width: 58px; height: 58px; border-radius: 12px; background: linear-gradient(135deg, #EE8C45, #C4561F); color: #fff; display: flex; align-items: baseline; justify-content: center; padding-top: 14px; box-shadow: 0 5px 12px rgba(0,0,0,0.28); }
-.pi-no b { font-family: 'Noto Serif KR'; font-size: 23px; font-weight: 700; line-height: 1; }
-.pi-no i { font-style: normal; font-size: 12px; margin-left: 1px; color: #FFE6D2; }
+.pi-list li + li { border-top: 1px solid #D5DBB8; }
+.pi-item { display: flex; align-items: center; gap: 13px; padding: 10px 2px; border-radius: 6px; text-decoration: none; color: inherit; transition: background 0.2s; }
+.pi-item:hover { background: rgba(63,74,34,0.06); }
+.pi-no { flex-shrink: 0; width: 46px; height: 46px; border-radius: 9px; background: linear-gradient(135deg, #76884A, #3F4A22); color: #fff; display: flex; align-items: baseline; justify-content: center; padding-top: 11px; }
+.pi-no b { font-family: 'Noto Serif KR'; font-size: 18.5px; font-weight: 700; line-height: 1; }
+.pi-no i { font-style: normal; font-size: 10px; margin-left: 1px; color: #DCE2C0; }
 .pi-text { flex: 1; min-width: 0; }
-.pi-text strong { display: block; font-family: 'Noto Serif KR'; font-size: 16.5px; font-weight: 700; color: #fff; word-break: keep-all; }
-.pi-text small { display: block; margin-top: 4px; font-size: 13px; line-height: 1.65; color: #E3E8CC; word-break: keep-all; }
-.pi-arrow { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; background: rgba(255,255,255,0.18); transition: transform 0.2s, background 0.2s; }
-.pi-item:hover .pi-arrow { transform: translateX(4px); background: #E0763A; }
-body.dark-mode .past-issues { box-shadow: 0 10px 26px rgba(0,0,0,0.45); }
-@media (max-width: 640px) { .past-issues { margin-left: 16px; margin-right: 16px; padding: 18px 14px 10px; } .pi-no { width: 50px; height: 50px; padding-top: 12px; } .pi-no b { font-size: 20px; } .pi-text strong { font-size: 15.5px; } .pi-text small { font-size: 12.5px; } .pi-arrow { width: 32px; height: 32px; } }
+.pi-text strong { display: block; font-family: 'Noto Serif KR'; font-size: 15.5px; font-weight: 700; color: var(--forest-900); word-break: keep-all; }
+.pi-text small { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.5; color: var(--text-gray); word-break: keep-all; }
+.pi-arrow { flex-shrink: 0; color: var(--terracotta); font-size: 18px; transition: transform 0.2s; }
+.pi-item:hover .pi-arrow { transform: translateX(4px); }
+body.dark-mode .past-issues { background: var(--sage-light); border-color: var(--border-light); border-left-color: var(--forest-line); box-shadow: none; }
+body.dark-mode .pi-list li + li { border-top-color: var(--border-light); }
+body.dark-mode .pi-heading, body.dark-mode .pi-text strong { color: #ECEEE0; }
+body.dark-mode .pi-kicker, body.dark-mode .pi-arrow { color: #F2A06B; }
+body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
+@media (max-width: 640px) { .past-issues { margin-left: 16px; margin-right: 16px; padding: 13px 14px 5px; } .pi-no { width: 42px; height: 42px; padding-top: 10px; } .pi-no b { font-size: 17px; } .pi-text strong { font-size: 15px; } .pi-text small { font-size: 12px; } }
 @media print { .pi-item:hover { background: none; } }
 </style>
 
@@ -1557,7 +1561,7 @@ body.dark-mode .past-issues { box-shadow: 0 10px 26px rgba(0,0,0,0.45); }
       <li>
         <a class="pi-item" href="https://ksk0203-oss.github.io/peacenews175/" target="_blank" rel="noopener">
           <span class="pi-no"><b>175</b><i>호</i></span>
-          <span class="pi-text"><strong>『평화세상』 통권 175호 · 온라인 첫 발행</strong><small>2026년 7월 · 여는 글, 이사장의 편지, 평화교실 강의, 홍동근 목사 연보, 법인 소식, 후원자 명단</small></span>
+          <span class="pi-text"><strong>『평화세상』 통권 175호</strong><small>2026년 7월 · 온라인 첫 발행</small></span>
           <span class="pi-arrow">→</span>
         </a>
       </li>
