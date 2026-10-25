@@ -814,9 +814,9 @@ body.dark-mode .figs strong, body.dark-mode .figs strong em { color: #F2A06B; }
 .pi-list li + li { border-top: 1px solid #BFC995; }
 .pi-item { display: flex; align-items: center; gap: 13px; padding: 10px 2px; border-radius: 6px; text-decoration: none; color: inherit; transition: background 0.2s; }
 .pi-item:hover { background: rgba(63,74,34,0.09); }
-.pi-no { flex-shrink: 0; height: 40px; padding: 0 15px; border-radius: 10px; background: linear-gradient(135deg, #627436, #2F3A18); color: #fff; display: block; line-height: 40px; text-align: center; white-space: nowrap; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22), 0 2px 5px rgba(47,58,24,0.25); }
-.pi-no b { font-family: 'Noto Serif KR'; font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
-.pi-no i { font-style: normal; font-size: 12px; margin-left: 2px; color: #DCE2C0; }
+.pi-no { flex-shrink: 0; display: block; width: 70px; height: 40px; filter: drop-shadow(0 2px 3px rgba(47,58,24,0.28)); }
+.pi-no text { font-family: 'Noto Serif KR', serif; font-weight: 700; fill: #fff; }
+.pi-no .pi-ho { font-family: 'Noto Sans KR', sans-serif; font-weight: 500; fill: #DCE2C0; }
 .pi-text { flex: 1; min-width: 0; }
 .pi-text strong { display: block; font-family: 'Noto Serif KR'; font-size: 15.5px; font-weight: 700; color: var(--forest-900); word-break: keep-all; }
 .pi-text small { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.5; color: var(--text-gray); word-break: keep-all; }
@@ -827,7 +827,7 @@ body.dark-mode .pi-list li + li { border-top-color: var(--border-light); }
 body.dark-mode .pi-heading, body.dark-mode .pi-text strong { color: #ECEEE0; }
 body.dark-mode .pi-kicker, body.dark-mode .pi-arrow { color: #F2A06B; }
 body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
-@media (max-width: 640px) { .past-issues { margin-left: 16px; margin-right: 16px; padding: 13px 14px 5px; } .pi-no { height: 36px; line-height: 36px; padding: 0 12px; } .pi-no b { font-size: 16px; } .pi-no i { font-size: 11px; } .pi-text strong { font-size: 15px; } .pi-text small { font-size: 12px; } }
+@media (max-width: 640px) { .past-issues { margin-left: 16px; margin-right: 16px; padding: 13px 14px 5px; } .pi-no { width: 63px; height: 36px; } .pi-text strong { font-size: 15px; } .pi-text small { font-size: 12px; } }
 @media print { .pi-item:hover { background: none; } }
 </style>
 
@@ -1560,7 +1560,7 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
     <ul class="pi-list">
       <li>
         <a class="pi-item" href="https://ksk0203-oss.github.io/peacenews175/" target="_blank" rel="noopener">
-          <span class="pi-no"><b>175</b><i>호</i></span>
+          <svg class="pi-no" viewBox="0 0 70 40" role="img" aria-label="175호" focusable="false"><defs><linearGradient id="piNoGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#627436"/><stop offset="1" stop-color="#2F3A18"/></linearGradient></defs><rect x="0.5" y="0.5" width="69" height="39" rx="9.5" fill="url(#piNoGrad)" stroke="rgba(255,255,255,0.22)"/><text x="35" y="26.5" text-anchor="middle"><tspan font-size="18">175</tspan><tspan class="pi-ho" font-size="12" dx="2">호</tspan></text></svg>
           <span class="pi-text"><strong>『평화세상』 통권 175호</strong><small>2026년 7월 · 온라인 첫 발행</small></span>
           <span class="pi-arrow">→</span>
         </a>
