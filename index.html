@@ -838,6 +838,16 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
 .reply-item .opinion-item-content { font-size: 14px; }
 .reply-form { margin: 12px 0 2px 14px; display: flex; flex-direction: column; gap: 8px; }
 .reply-form[hidden] { display: none; }
+
+.index-tab--08 { background: linear-gradient(160deg, #7D8A4A, #566331); }
+
+/* 데스크톱 오른쪽 탭이 8개로 늘어 한 화면에 들어가도록 조금 촘촘하게 */
+@media (min-width: 1041px) {
+  .index-tabs { gap: 6px; max-height: calc(100vh - 24px); overflow-y: auto; scrollbar-width: none; }
+  .index-tabs::-webkit-scrollbar { display: none; }
+  .index-tab { letter-spacing: 1px; padding: 12px 8px; min-height: 0; font-size: 13px; }
+  .index-tab .roman { margin-bottom: 5px; }
+}
 </style>
 
 </head>
@@ -851,6 +861,7 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
   <a class="index-tab index-tab--07" href="#article-camino"><span><span class="roman">✦</span>평화 묵상</span></a>
   <a class="index-tab index-tab--05" href="#article-05"><span><span class="roman">Ⅴ</span>남은 일정</span></a>
   <a class="index-tab index-tab--06" href="#article-06"><span><span class="roman">Ⅵ</span>후원 감사</span></a>
+  <a class="index-tab index-tab--08" href="#past-issues"><span><span class="roman">前</span>지난 호</span></a>
 </div>
 
 <div class="email-wrap">
