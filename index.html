@@ -848,6 +848,10 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
   .index-tab { letter-spacing: 1px; padding: 12px 8px; min-height: 0; font-size: 13px; }
   .index-tab .roman { margin-bottom: 5px; }
 }
+
+/* 의견 삭제 버튼 */
+.opinion-item-meta .delete-btn { margin-left: 8px; padding: 2px 10px; font-family: inherit; font-size: 12px; font-weight: 700; color: var(--text-gray); background: transparent; border: 1px solid var(--border-light); border-radius: 999px; cursor: pointer; }
+.opinion-item-meta .delete-btn:hover { background: #a8552b; color: #fff; border-color: #a8552b; }
 </style>
 
 </head>
@@ -2003,8 +2007,6 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
   if (!form) return;
 
   var HEADERS = { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY };
-  // 답글(parent_id) 기능은 DB에 parent_id 칸이 있을 때만 켜진다. 없으면 기존처럼 의견만 보여준다.
-  var canReply = true;
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -2014,12 +2016,40 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
   }
   function fmtDate(v) { return new Date(v).toLocaleDateString('ko-KR'); }
 
-  function post(body) {
-    return fetch(SUPABASE_URL + '/rest/v1/opinions', {
+  function rpc(fn, args) {
+    return fetch(SUPABASE_URL + '/rest/v1/rpc/' + fn, {
       method: 'POST',
-      headers: Object.assign({ 'Content-Type': 'application/json', Prefer: 'return=minimal' }, HEADERS),
-      body: JSON.stringify(body)
-    }).then(function(res) { if (!res.ok) throw new Error('전송 실패'); });
+      headers: Object.assign({ 'Content-Type': 'application/json' }, HEADERS),
+      body: JSON.stringify(args)
+    }).then(function(res) {
+      if (!res.ok) throw new Error(fn + ' failed');
+      return res.json();
+    });
+  }
+  // 글·답글 올리기 (삭제용 비밀번호는 서버에서 암호화되어 저장됨)
+  function createOpinion(name, content, parentId, password) {
+    return rpc('create_opinion', { p_name: name || null, p_content: content, p_issue: ISSUE, p_parent: parentId || null, p_password: password });
+  }
+
+  function askDelete(item, isReply) {
+    var msg = (isReply ? '이 답글' : '이 의견') + '을 쓸 때 입력한 삭제용 비밀번호를 입력해 주세요.';
+    if (!isReply) msg += String.fromCharCode(10) + '(의견을 삭제하면 달린 답글도 함께 삭제됩니다.)';
+    var pw = window.prompt(msg);
+    if (pw === null || pw === '') return;
+    rpc('delete_opinion', { p_id: item.id, p_password: pw })
+      .then(function(ok) {
+        if (ok === true) { loadOpinions(); }
+        else { window.alert('비밀번호가 맞지 않거나, 비밀번호 없이 작성된 글이라 삭제할 수 없습니다.'); }
+      })
+      .catch(function(err) { window.alert('삭제 중 오류가 발생했습니다. 다시 시도해 주세요.'); console.error(err); });
+  }
+
+  function buildPasswordInput() {
+    var pw = el('input', 'opinion-input');
+    pw.type = 'password'; pw.required = true; pw.minLength = 4; pw.maxLength = 50;
+    pw.placeholder = '삭제용 비밀번호 (4자 이상, 나중에 글을 지울 때 필요합니다)';
+    pw.autocomplete = 'new-password';
+    return pw;
   }
 
   function buildReplyForm(parentId) {
@@ -2029,20 +2059,28 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
     name.type = 'text'; name.placeholder = '이름 (선택 사항)';
     var ta = el('textarea', 'opinion-textarea');
     ta.placeholder = '답글을 입력해주세요'; ta.rows = 3; ta.required = true;
+    var pw = buildPasswordInput();
     var btn = el('button', 'opinion-submit', '답글 남기기');
     btn.type = 'submit';
     var st = el('p', 'opinion-status');
-    f.appendChild(name); f.appendChild(ta); f.appendChild(btn); f.appendChild(st);
+    f.appendChild(name); f.appendChild(ta); f.appendChild(pw); f.appendChild(btn); f.appendChild(st);
     f.addEventListener('submit', function(e) {
       e.preventDefault();
       var content = ta.value.trim();
       if (!content) return;
       st.textContent = '제출 중입니다...';
-      post({ name: name.value.trim() || null, content: content, issue: ISSUE, parent_id: parentId })
+      createOpinion(name.value.trim(), content, parentId, pw.value)
         .then(function() { loadOpinions(); })
         .catch(function(err) { st.textContent = '오류가 발생했습니다. 다시 시도해주세요.'; console.error(err); });
     });
     return f;
+  }
+
+  function addDeleteButton(meta, item, isReply) {
+    var del = el('button', 'delete-btn', '삭제');
+    del.type = 'button';
+    del.addEventListener('click', function() { askDelete(item, isReply); });
+    meta.appendChild(del);
   }
 
   function renderItem(item, replies) {
@@ -2050,24 +2088,25 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
     box.appendChild(el('p', 'opinion-item-content', item.content));
     var meta = el('p', 'opinion-item-meta', (item.name ? item.name : '익명') + ' · ' + fmtDate(item.created_at));
     box.appendChild(meta);
-    if (canReply && item.id) {
-      var rf = buildReplyForm(item.id);
-      var toggle = el('button', 'reply-toggle', '답글');
-      toggle.type = 'button';
-      toggle.addEventListener('click', function() { rf.hidden = !rf.hidden; if (!rf.hidden) rf.querySelector('textarea').focus(); });
-      meta.appendChild(toggle);
-      if (replies && replies.length) {
-        var rl = el('div', 'reply-list');
-        replies.forEach(function(r) {
-          var ri = el('div', 'reply-item');
-          ri.appendChild(el('p', 'opinion-item-content', r.content));
-          ri.appendChild(el('p', 'opinion-item-meta', (r.name ? r.name : '익명') + ' · ' + fmtDate(r.created_at)));
-          rl.appendChild(ri);
-        });
-        box.appendChild(rl);
-      }
-      box.appendChild(rf);
+    var rf = buildReplyForm(item.id);
+    var toggle = el('button', 'reply-toggle', '답글');
+    toggle.type = 'button';
+    toggle.addEventListener('click', function() { rf.hidden = !rf.hidden; if (!rf.hidden) rf.querySelector('textarea').focus(); });
+    meta.appendChild(toggle);
+    addDeleteButton(meta, item, false);
+    if (replies && replies.length) {
+      var rl = el('div', 'reply-list');
+      replies.forEach(function(r) {
+        var ri = el('div', 'reply-item');
+        ri.appendChild(el('p', 'opinion-item-content', r.content));
+        var rm = el('p', 'opinion-item-meta', (r.name ? r.name : '익명') + ' · ' + fmtDate(r.created_at));
+        addDeleteButton(rm, r, true);
+        ri.appendChild(rm);
+        rl.appendChild(ri);
+      });
+      box.appendChild(rl);
     }
+    box.appendChild(rf);
     return box;
   }
 
@@ -2086,21 +2125,18 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
     });
   }
 
-  function query(select) {
-    return fetch(SUPABASE_URL + '/rest/v1/opinions?select=' + select + '&issue=eq.' + ISSUE + '&order=created_at.desc', { headers: HEADERS });
-  }
-
   function loadOpinions() {
-    query('id,parent_id,name,content,created_at')
-      .then(function(res) {
-        if (res.ok) { canReply = true; return res.json(); }
-        // parent_id 칸이 아직 없으면 기존 방식으로 불러오고 답글 기능은 숨긴다
-        canReply = false;
-        return query('name,content,created_at').then(function(r2) { return r2.json(); });
-      })
+    fetch(SUPABASE_URL + '/rest/v1/opinions?select=id,parent_id,name,content,created_at&issue=eq.' + ISSUE + '&order=created_at.desc', { headers: HEADERS })
+      .then(function(res) { return res.json(); })
       .then(show)
       .catch(function(err) { console.error('의견을 불러오지 못했습니다:', err); });
   }
+
+  // 의견 쓰기 칸에 삭제용 비밀번호 입력 칸 추가
+  var pwMain = buildPasswordInput();
+  pwMain.id = 'opinion-password';
+  var submitBtn = form.querySelector('.opinion-submit');
+  form.insertBefore(pwMain, submitBtn);
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -2109,9 +2145,9 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
     if (!content) return;
 
     statusEl.textContent = '제출 중입니다...';
-    post({ name: name || null, content: content, issue: ISSUE })
+    createOpinion(name, content, null, pwMain.value)
       .then(function() {
-        statusEl.textContent = '의견이 등록되었습니다. 감사합니다!';
+        statusEl.textContent = '의견이 등록되었습니다. 감사합니다! (삭제할 때 입력한 비밀번호가 필요합니다)';
         form.reset();
         loadOpinions();
       })
