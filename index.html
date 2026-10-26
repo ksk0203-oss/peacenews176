@@ -829,6 +829,15 @@ body.dark-mode .pi-kicker, body.dark-mode .pi-arrow { color: #F2A06B; }
 body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
 @media (max-width: 640px) { .past-issues { margin-left: 16px; margin-right: 16px; padding: 13px 14px 5px; } .pi-no { width: 63px; height: 36px; } .pi-text strong { font-size: 15px; } .pi-text small { font-size: 12px; } }
 @media print { .pi-item:hover { background: none; } }
+
+/* 의견 답글 */
+.opinion-item-meta .reply-toggle { margin-left: 10px; padding: 2px 10px; font-family: inherit; font-size: 12px; font-weight: 700; color: var(--forest-700); background: transparent; border: 1px solid var(--border-light); border-radius: 999px; cursor: pointer; }
+.opinion-item-meta .reply-toggle:hover { background: var(--forest-700); color: #fff; border-color: var(--forest-700); }
+.reply-list { margin: 12px 0 0 14px; padding-left: 14px; border-left: 2px solid var(--sage); display: flex; flex-direction: column; gap: 10px; }
+.reply-item { padding: 10px 12px; background: var(--sage-light); border-radius: 4px; }
+.reply-item .opinion-item-content { font-size: 14px; }
+.reply-form { margin: 12px 0 2px 14px; display: flex; flex-direction: column; gap: 8px; }
+.reply-form[hidden] { display: none; }
 </style>
 
 </head>
@@ -863,6 +872,7 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
       <li><a href="#article-camino"><span class="index-num alt">✦</span><span class="index-text"><span class="index-title">부엔 까미노 Buen Camino!</span><span class="index-sub">평화 묵상 · 서로의 길을 축복하는 평화 · 강지연 목사</span></span><span class="index-arrow">→</span></a></li>
       <li><a href="#article-05"><span class="index-num">05</span><span class="index-text"><span class="index-title">남은 일정과 후원 요청</span><span class="index-sub">대림절 묵상집 · 평화통일 포럼 · 고려인 후원</span></span><span class="index-arrow">→</span></a></li>
       <li><a href="#article-06"><span class="index-num">06</span><span class="index-text"><span class="index-title">후원해 주셔서 감사합니다</span><span class="index-sub">후원자 명단 및 안내</span></span><span class="index-arrow">→</span></a></li>
+      <li><a href="#past-issues"><span class="index-num alt">前</span><span class="index-text"><span class="index-title">지난 호 보기</span><span class="index-sub">『평화세상』 통권 175호 보러 가기</span></span><span class="index-arrow">→</span></a></li>
     </ul>
   </div>
 
@@ -1981,36 +1991,103 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
   var listEl = document.getElementById('opinion-list');
   if (!form) return;
 
-  function escapeHtml(str) {
-    var div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
+  var HEADERS = { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY };
+  // 답글(parent_id) 기능은 DB에 parent_id 칸이 있을 때만 켜진다. 없으면 기존처럼 의견만 보여준다.
+  var canReply = true;
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+  function fmtDate(v) { return new Date(v).toLocaleDateString('ko-KR'); }
+
+  function post(body) {
+    return fetch(SUPABASE_URL + '/rest/v1/opinions', {
+      method: 'POST',
+      headers: Object.assign({ 'Content-Type': 'application/json', Prefer: 'return=minimal' }, HEADERS),
+      body: JSON.stringify(body)
+    }).then(function(res) { if (!res.ok) throw new Error('전송 실패'); });
+  }
+
+  function buildReplyForm(parentId) {
+    var f = el('form', 'reply-form');
+    f.hidden = true;
+    var name = el('input', 'opinion-input');
+    name.type = 'text'; name.placeholder = '이름 (선택 사항)';
+    var ta = el('textarea', 'opinion-textarea');
+    ta.placeholder = '답글을 입력해주세요'; ta.rows = 3; ta.required = true;
+    var btn = el('button', 'opinion-submit', '답글 남기기');
+    btn.type = 'submit';
+    var st = el('p', 'opinion-status');
+    f.appendChild(name); f.appendChild(ta); f.appendChild(btn); f.appendChild(st);
+    f.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var content = ta.value.trim();
+      if (!content) return;
+      st.textContent = '제출 중입니다...';
+      post({ name: name.value.trim() || null, content: content, issue: ISSUE, parent_id: parentId })
+        .then(function() { loadOpinions(); })
+        .catch(function(err) { st.textContent = '오류가 발생했습니다. 다시 시도해주세요.'; console.error(err); });
+    });
+    return f;
+  }
+
+  function renderItem(item, replies) {
+    var box = el('div', 'opinion-item');
+    box.appendChild(el('p', 'opinion-item-content', item.content));
+    var meta = el('p', 'opinion-item-meta', (item.name ? item.name : '익명') + ' · ' + fmtDate(item.created_at));
+    box.appendChild(meta);
+    if (canReply && item.id) {
+      var rf = buildReplyForm(item.id);
+      var toggle = el('button', 'reply-toggle', '답글');
+      toggle.type = 'button';
+      toggle.addEventListener('click', function() { rf.hidden = !rf.hidden; if (!rf.hidden) rf.querySelector('textarea').focus(); });
+      meta.appendChild(toggle);
+      if (replies && replies.length) {
+        var rl = el('div', 'reply-list');
+        replies.forEach(function(r) {
+          var ri = el('div', 'reply-item');
+          ri.appendChild(el('p', 'opinion-item-content', r.content));
+          ri.appendChild(el('p', 'opinion-item-meta', (r.name ? r.name : '익명') + ' · ' + fmtDate(r.created_at)));
+          rl.appendChild(ri);
+        });
+        box.appendChild(rl);
+      }
+      box.appendChild(rf);
+    }
+    return box;
+  }
+
+  function show(data) {
+    listEl.innerHTML = '';
+    if (!data || !data.length) {
+      listEl.appendChild(el('p', 'opinion-empty', '아직 등록된 의견이 없습니다. 첫 의견을 남겨보세요.'));
+      return;
+    }
+    var parents = data.filter(function(d) { return !d.parent_id; });
+    var byParent = {};
+    data.forEach(function(d) { if (d.parent_id) (byParent[d.parent_id] = byParent[d.parent_id] || []).push(d); });
+    parents.forEach(function(p) {
+      var rs = (byParent[p.id] || []).slice().sort(function(a, b) { return new Date(a.created_at) - new Date(b.created_at); });
+      listEl.appendChild(renderItem(p, rs));
+    });
+  }
+
+  function query(select) {
+    return fetch(SUPABASE_URL + '/rest/v1/opinions?select=' + select + '&issue=eq.' + ISSUE + '&order=created_at.desc', { headers: HEADERS });
   }
 
   function loadOpinions() {
-    fetch(SUPABASE_URL + '/rest/v1/opinions?select=name,content,created_at&issue=eq.' + ISSUE + '&order=created_at.desc', {
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: 'Bearer ' + SUPABASE_KEY
-      }
-    })
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        listEl.innerHTML = '';
-        if (!data || data.length === 0) {
-          listEl.innerHTML = '<p class="opinion-empty">아직 등록된 의견이 없습니다. 첫 의견을 남겨보세요.</p>';
-          return;
-        }
-        data.forEach(function(item) {
-          var date = new Date(item.created_at).toLocaleDateString('ko-KR');
-          var div = document.createElement('div');
-          div.className = 'opinion-item';
-          div.innerHTML =
-            '<p class="opinion-item-content">' + escapeHtml(item.content) + '</p>' +
-            '<p class="opinion-item-meta">' + (item.name ? escapeHtml(item.name) : '익명') + ' · ' + date + '</p>';
-          listEl.appendChild(div);
-        });
+    query('id,parent_id,name,content,created_at')
+      .then(function(res) {
+        if (res.ok) { canReply = true; return res.json(); }
+        // parent_id 칸이 아직 없으면 기존 방식으로 불러오고 답글 기능은 숨긴다
+        canReply = false;
+        return query('name,content,created_at').then(function(r2) { return r2.json(); });
       })
+      .then(show)
       .catch(function(err) { console.error('의견을 불러오지 못했습니다:', err); });
   }
 
@@ -2021,19 +2098,8 @@ body.dark-mode .pi-item:hover { background: rgba(255,255,255,0.05); }
     if (!content) return;
 
     statusEl.textContent = '제출 중입니다...';
-
-    fetch(SUPABASE_URL + '/rest/v1/opinions', {
-      method: 'POST',
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: 'Bearer ' + SUPABASE_KEY,
-        'Content-Type': 'application/json',
-        Prefer: 'return=minimal'
-      },
-      body: JSON.stringify({ name: name || null, content: content, issue: ISSUE })
-    })
-      .then(function(res) {
-        if (!res.ok) throw new Error('전송 실패');
+    post({ name: name || null, content: content, issue: ISSUE })
+      .then(function() {
         statusEl.textContent = '의견이 등록되었습니다. 감사합니다!';
         form.reset();
         loadOpinions();
